@@ -1,222 +1,149 @@
-$(function() {
+function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallback, completeCallback) {
+	console.log(url, type, data);
+	$.ajax({
+		url: url,
+		type: type, //GET POST
+		contentType: "application/json", //必须有  
+		async: true,    //或false,是否异步
+		data: data,
+		timeout: 3000,    //超时时间
+		dataType: 'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+		success: function (data, textStatus, jqXHR) {
+			successCallback && successCallback(data, textStatus, jqXHR)
+		},
+		error: function (xhr, textStatus) {
+			errorCallback && errorCallback(xhr, textStatus)
+		},
+		beforeSend: function (xhr) {
+			beforeSendCallback && beforeSendCallback(xhr)
+		},
+		complete: function () {
+			completeCallback && completeCallback();
+		}
+	})
+}
 
-	// 加载设置
-	var defaultConfig = {color: 'white'}; // 默认配置
-	chrome.storage.sync.get(defaultConfig, function(items) {
-		document.body.style.backgroundColor = items.color;
-	});
+(function (window) {
+	chrome.tabs.getSelected(null, function (tab) {
+		console.log(tab);
+		var tags = [];
+		var selectedTags = new Set();
+		var userId = null;
+		var login = false;
+		var firstSelectTag = true;
 
-	// 初始化国际化
-	$('#test_i18n').html(chrome.i18n.getMessage("helloWorld"));
+		$("#js-url").val(tab.url);
+		$("#js-title").val(tab.title);
+		$(".ui.inverted.dimmer").addClass("active");
 
+		let url = 'http://mybookmark.cn/api/tags/';
 
-});
-
-// 打开后台页
-$('#open_background').click(e => {
-	window.open(chrome.extension.getURL('background.html'));
-});
-
-// 调用后台JS
-$('#invoke_background_js').click(e => {
-	var bg = chrome.extension.getBackgroundPage();
-	bg.testBackground();
-});
-
-// 获取后台页标题
-$('#get_background_title').click(e => {
-	var bg = chrome.extension.getBackgroundPage();
-	alert(bg.document.title);
-});
-
-// 设置后台页标题
-$('#set_background_title').click(e => {
-	var title = prompt('请输入background的新标题：', '这是新标题');
-	var bg = chrome.extension.getBackgroundPage();
-	bg.document.title = title;
-	alert('修改成功！');
-});
-
-// 自定义窗体大小
-$('#custom_window_size').click(() => {
-	chrome.windows.getCurrent({}, (currentWindow) => {
-		var startLeft = 10;
-		chrome.windows.update(currentWindow.id, 
-		{
-			left: startLeft * 10,
-			top: 100,
-			width: 800,
-			height: 600
-		});
-		var inteval = setInterval(() => {
-			if(startLeft >= 40) clearInterval(inteval);
-			chrome.windows.update(currentWindow.id, {left: (++startLeft) * 10});
-		}, 50);
-	});
-});
-
-// 最大化窗口
-$('#max_current_window').click(() => {
-	chrome.windows.getCurrent({}, (currentWindow) => {
-		// state: 可选 'minimized', 'maximized' and 'fullscreen' 
-		chrome.windows.update(currentWindow.id, {state: 'maximized'});
-	});
-});
-
-
-// 最小化窗口
-$('#min_current_window').click(() => {
-	chrome.windows.getCurrent({}, (currentWindow) => {
-		// state: 可选 'minimized', 'maximized' and 'fullscreen' 
-		chrome.windows.update(currentWindow.id, {state: 'minimized'});
-	});
-});
-
-// 打开新窗口
-$('#open_new_window').click(() => {
-	chrome.windows.create({state: 'maximized'});
-});
-
-// 关闭全部
-$('#close_current_window').click(() => {
-	chrome.windows.getCurrent({}, (currentWindow) => {
-		chrome.windows.remove(currentWindow.id);
-	});
-});
-
-// 新标签打开网页
-$('#open_url_new_tab').click(() => {
-	chrome.tabs.create({url: 'https://www.baidu.com'});
-});
-
-// 当前标签打开网页
-$('#open_url_current_tab').click(() => {
-	getCurrentTabId(tabId => {
-		chrome.tabs.update(tabId, {url: 'http://www.so.com'});
-	});
-});
-
-// 获取当前标签ID
-$('#get_current_tab_id').click(() => {
-	getCurrentTabId(tabId => {
-		alert('当前标签ID：' + tabId);
-	});
-});
-
-// 高亮tab
-$('#highlight_tab').click(() => {
-	chrome.tabs.highlight({tabs: 0});
-});
-
-// popup主动发消息给content-script
-$('#send_message_to_content_script').click(() => {
-	sendMessageToContentScript('你好，我是popup！', (response) => {
-		if(response) alert('收到来自content-script的回复：'+response);
-	});
-});
-
-// 监听来自content-script的消息
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse)
-{
-	console.log('收到来自content-script的消息：');
-	console.log(request, sender, sendResponse);
-	sendResponse('我是popup，我已收到你的消息：' + JSON.stringify(request));
-});
-
-// popup与content-script建立长连接
-$('#connect_to_content_script').click(() => {
-	getCurrentTabId((tabId) => {
-		var port = chrome.tabs.connect(tabId, {name: 'test-connect'});
-		port.postMessage({question: '你是谁啊？'});
-		port.onMessage.addListener(function(msg) {
-			alert('收到长连接消息：'+msg.answer);
-			if(msg.answer && msg.answer.startsWith('我是'))
-			{
-				port.postMessage({question: '哦，原来是你啊！'});
+		jqAjax(url, 'GET', {}, function(_tags, textStatus, jqXHR){
+			login = true;
+			tags = _tags;
+			tags.sort((a, b) => {
+				return (a.last_use > b.last_use) ? -1 : 1;
+			})
+			console.log(tags);
+			for (let tag of tags) {
+				$('#js-add-tag').before(`<div class="ui label js-tag" id="${tag.id}" style="margin:3px 10px 8px 0px;cursor:default;">${tag.name}</div>`);
 			}
+		}, function(xhr, textStatus){
+			if(xhr.status === 401){
+				toastr.error('您必须先登陆！3秒后自动跳转到登陆页面。', "错误");
+				setTimeout(() => {
+					chrome.tabs.create({ url: 'http://mybookmark.cn/#/login' });
+				}, 3000);
+				login = false;
+			}
+		}, null, function(){
+			$(".ui.inverted.dimmer").removeClass("active");
+			if (tags.length > 0) {
+				$("#" + tags[0].id).addClass("green");
+				selectedTags.add(tags[0].id);
+			}
+
+			$("#js-add-tag").click(function () {
+				toastr.info('请到网站分类页面添加分类，3秒后自动打开新的网页。', "提示");
+				setTimeout(() => {
+					chrome.tabs.create({ url: 'http://mybookmark.cn/#/tags' });
+				}, 3000);
+			});
+
+			$(".js-tag").click(function () {
+				if ($(this).hasClass("green")) {
+					$(this).removeClass("green");
+					selectedTags.delete($(this).attr("id"));
+				} else {
+					if ($(".js-tag.green").length >= 3) {
+						toastr.error('您至少要选择一个分类！最多选择三个分类！如果暂时没想到放到哪个分类，可以先选择未分类。', "错误");
+					} else {
+						if(firstSelectTag){
+							$("#"+tags[0].id).removeClass("green");
+							selectedTags.delete(tags[0].id);
+						}
+						$(this).addClass("green");
+						selectedTags.add($(this).attr("id"));
+						firstSelectTag = false;
+					}
+				}
+			});
+		})
+
+
+
+		$('.js-cancel').click(() => {
+			window.close();
+		});
+
+		$('.js-send').click(() => {
+			if(!login){
+				toastr.error('您必须先登陆！3秒后自动跳转到登陆页面。', "错误");
+				setTimeout(() => {
+					chrome.tabs.create({ url: 'http://mybookmark.cn/#/login' });
+				}, 3000);
+			}
+
+			var url = "http://mybookmark.cn/api/addBookmark/";
+			var params = {
+				id: "",
+				url: $("#js-url").val(),
+				title: $("#js-title").val(),
+				public: $('.ui.checkbox.js-public').checkbox('is checked') ? '1' : '0',
+				tags: Array.from(selectedTags),
+				description: $("#js-desc").val()
+			}
+
+			if (!/http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/.test(params.url)) {
+				toastr.error('检撤到您的书签链接非法，是否忘记加http或者https了？建议直接从打开浏览器地址栏复制出来直接粘贴到输入框。', "错误");
+				return;
+			}
+			if (params.tags.length < 1 || params.tags.length > 3) {
+				toastr.error('您至少要选择一个分类！最多选择三个分类！如果暂时没想到放到哪个分类，可以先选择未分类', "错误");
+				return;
+			}
+			if (!params.title) {
+				toastr.error('书签标题不能为空！', "错误");
+				return;
+			}
+
+			console.log("add bookmark", params);
+
+			jqAjax(url, "POST", JSON.stringify({params:params}), function (data, textStatus, jqXHR) {
+				if (data.title) {
+					var msg = '[ ' + data.title + ' ] 添加成功！</br>' + (data.update ? '系统检测到该书签之前添加过，只更新链接，描述，标题，分类。创建日期与最后点击日期不更新！' : '') + '</br>窗口 3 秒后自动关闭。';
+					toastr.success(msg, "提示");
+					setTimeout(() => {
+						window.close();
+					}, 3000)
+				} else {
+					toastr.error('[ ' + params.title + ' ] 添加失败', "提示");
+				}
+			}, function (xhr, textStatus) {
+				toastr.error('[ ' + params.title + ' ] 添加失败', "提示");
+			})
 		});
 	});
-});
-
-// 获取当前选项卡ID
-function getCurrentTabId(callback)
-{
-	chrome.tabs.query({active: true, currentWindow: true}, function(tabs)
-	{
-		if(callback) callback(tabs.length ? tabs[0].id: null);
-	});
-}
-
-// 这2个获取当前选项卡id的方法大部分时候效果都一致，只有少部分时候会不一样
-function getCurrentTabId2()
-{
-	chrome.windows.getCurrent(function(currentWindow)
-	{
-		chrome.tabs.query({active: true, windowId: currentWindow.id}, function(tabs)
-		{
-			if(callback) callback(tabs.length ? tabs[0].id: null);
-		});
-	});
-}
-
-// 向content-script主动发送消息
-function sendMessageToContentScript(message, callback)
-{
-	getCurrentTabId((tabId) =>
-	{
-		chrome.tabs.sendMessage(tabId, message, function(response)
-		{
-			if(callback) callback(response);
-		});
-	});
-}
-
-// 向content-script注入JS片段
-function executeScriptToCurrentTab(code)
-{
-	getCurrentTabId((tabId) =>
-	{
-		chrome.tabs.executeScript(tabId, {code: code});
-	});
-}
+})(window);
 
 
-// 演示2种方式操作DOM
-
-// 修改背景色
-$('#update_bg_color').click(() => {
-	executeScriptToCurrentTab('document.body.style.backgroundColor="red";')
-});
-
-// 修改字体大小
-$('#update_font_size').click(() => {
-	sendMessageToContentScript({cmd:'update_font_size', size: 42}, function(response){});
-});
-
-// 显示badge
-$('#show_badge').click(() => {
-	chrome.browserAction.setBadgeText({text: 'New'});
-	chrome.browserAction.setBadgeBackgroundColor({color: [255, 0, 0, 255]});
-});
-
-// 隐藏badge
-$('#hide_badge').click(() => {
-	chrome.browserAction.setBadgeText({text: ''});
-	chrome.browserAction.setBadgeBackgroundColor({color: [0, 0, 0, 0]});
-});
-
-// 显示桌面通知
-$('#show_notification').click(e => {
-	chrome.notifications.create(null, {
-		type: 'image',
-		iconUrl: 'img/icon.png',
-		title: '祝福',
-		message: '骚年，祝你圣诞快乐！Merry christmas!',
-		imageUrl: 'img/sds.png'
-	});
-});
-
-$('#check_media').click(e => {
-	alert('即将打开一个有视频的网站，届时将自动检测是否存在视频！');
-	chrome.tabs.create({url: 'http://www.w3school.com.cn/tiy/t.asp?f=html5_video'});
-});

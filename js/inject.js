@@ -1,3 +1,7 @@
+console.log("inject.js..................")
+
+
+
 // 通过postMessage调用content-script
 function invokeContentScript(code)
 {

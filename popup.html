@@ -1,69 +1,74 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>popup页</title>
-	<meta charset="utf-8"/>
+	<meta charset="utf-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="/css/externe/semantic.min.css " rel="stylesheet" />
+	<link href="/css/externe/toastr.min.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/externe/jquery-1.8.3.js"></script>
+	<script type="text/javascript" src="js/externe/semantic.min.js"></script>
+	<script type="text/javascript" src="js/externe/toastr.min.js"></script>
+	<script type="text/javascript" src="js/popup.js"></script>
 	<style>
-	body {
-		font-family: 'Microsoft Yahei';
-		width: 500px;
-		min-height: 100px;
-	}
-	a {margin-right: 10px;}
+		body {
+			font-family: 'Microsoft Yahei';
+			width: 800px;
+			max-height: 420px;
+		}
+		form {
+			margin: 20px;
+		}
 	</style>
 </head>
+
 <body>
-	<h1>这是一个popup页面！</h1>
-	<h2>background</h2>
-	<div>
-		<a href="#" id="open_background">打开background</a>
-		<a href="#" id="invoke_background_js">调用background页JS方法</a>
-		<a href="#" id="get_background_title">获取background页的标题</a>
-		<a href="#" id="set_background_title">设置background页标题</a>
-		(验证background生命周期和单实例特性)
-	</div>
-	<h2>窗口操作演示</h2>
-	<div>
-		<a href="#" id="open_new_window">新窗口打开百度</a>
-		<a href="#" id="custom_window_size">执行简单的窗口动画</a>
-		<a href="#" id="max_current_window">将当前窗口最大化</a>
-		<a href="#" id="min_current_window">将当前窗口最小化</a>
-		<a href="#" id="close_current_window">关闭当前窗口所有标签(慎点)</a>
-	</div>
-	<h2>标签操作演示</h2>
-	<div>
-		<a href="#" id="open_url_new_tab">新标签打开百度</a>
-		<a href="#" id="open_url_current_tab">当前标签打开网页</a>
-		<a href="#" id="get_current_tab_id">获取当前标签页ID</a>
-		<a href="#" id="highlight_tab">切换到第一个标签</a>
-	</div>
-	<h2>popup与content-script交互</h2>
-	<div>
-		<a href="#" id="send_message_to_content_script">短连接发送消息到content-script</a>
-		<a href="#" id="connect_to_content_script">长连接发送消息到content-script</a>
-	</div>
-	<h2>DOM交互演示</h2>
-	<div>
-		<a href="#" id="update_bg_color">修改页面背景色(通过executeScript实现)</a>
-		<a href="#" id="update_font_size">修改字体大小(通过sendMessage实现)</a>
-	</div>
-	<h2>国际化演示</h2>
-	<div>
-		<p><span id="test_i18n"></span> (另外请到插件列表页查看描述的变化)</p>
-	</div>
-	<h2>其它</h2>
-	<div>
-		<a href="#" id="show_badge">显示badge</a>
-		<a href="#" id="hide_badge">隐藏badge</a>
-		<a href="#" id="show_notification">显示桌面通知</a>
-		<a href="#" id="check_media">检测网页视频</a>
-	</div>
-	<h2>更多</h2>
-	<div>
-		百度广告，右键菜单，omnibox，图片大小演示，devtools演示，sidebar演示，
-	</div>
-	<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
-	<script type="text/javascript" src="js/popup.js"></script>
+	<form class="ui form">
+		<h3 class="ui header">添加书签</h3>
+		<div class="ui divider"  style="margin-top:20px;margin-bottom:20px"></div>
+		<div class="required field">
+			<div class="fields">
+				<div class="required eight wide field">
+					<label>书签链接</label>
+					<input id="js-url" type="text" placeholder="输粘贴网页地址，如：http://mybookmark.cn/">
+				</div>
+				<div class="required eight wide field">
+					<label>书签标题</label>
+					<div class="ui icon input">
+						<input id="js-title" type="text">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="required field">
+			<label>已有书签分类选择
+				<span title="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;友情提示：&#10;1、添加新书签，根据使用经验，默认会选择最后一次使用分类。&#10;2、如果不是的，直接去选择其他的就好，系统会自动取消。&#10;3、如果你想同时选默认与其他的分类，你选了其他分类之后，再来选中取消的默认分类即可。&#10;4、若想对当前分类进行编辑，请前往分类页面！">
+					<i class="info circle icon"></i>
+				</span>
+			</label>
+			<div class="ui inverted dimmer">
+				<div class="ui text loader">正在获取分类...</div>
+			</div>
+			<div class="ui label" id="js-add-tag" style="margin:3px 10px 8px 0px;cursor:default;" title="添加新分类">
+				<i style="margin-left:10px;" class="plus icon"></i>
+			</div>
+		</div>
+		<div class="field">
+			<label>描述</label>
+			<textarea rows="5" id="js-desc" placeholder="可以是网站的说明，也可以备忘一下账号或者摘抄内容，就算公开你的链接，这个也只有自己能在详情里面看到"></textarea>
+		</div>
+		<div class="field">
+			<div class="ui checkbox checked">
+				<input type="checkbox" name="example" checked="">
+				<label>我要公开此收藏的链接供别人搜索</label>
+			</div>
+		</div>
+		<div class="actions" style="margin-left:600px">
+			<div class="ui cancel button js-cancel" style="cursor:default;margin-right:15px">取消</div>
+			<div class="ui green button js-send" style="cursor:default;margin-right:-5px">发送</div>
+		</div>
+	</form>
 </body>
+
 </html>
