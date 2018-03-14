@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "书签快速添加",
 	"version": "1.0.0",
-	"description": "__MSG_pluginDesc__",
+	"description": "快速将书签添加到系统 http://mybookmark.cn/ 中",
 	"icons": {
 		"16": "img/icon.png",
 		"48": "img/icon.png",
@@ -23,7 +23,7 @@
 				"<all_urls>"
 			],
 			"js": [
-				"js/externe/jquery-1.8.3.js",
+				"js/jquery-1.8.3.js",
 				"js/content-script.js"
 			],
 			"css": [
