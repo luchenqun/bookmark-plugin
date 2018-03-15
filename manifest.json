@@ -48,6 +48,5 @@
 	"homepage_url": "http://mybookmark.cn/",
 	"omnibox": {
 		"keyword": "bookmark"
-	},
-	"default_locale": "zh_CN"
+	}
 }

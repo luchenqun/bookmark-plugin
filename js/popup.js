@@ -90,8 +90,6 @@ function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallb
 			});
 		})
 
-
-
 		$('.js-cancel').click(() => {
 			window.close();
 		});
@@ -127,15 +125,12 @@ function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallb
 				return;
 			}
 
-			console.log("add bookmark", params);
-
 			jqAjax(url, "POST", JSON.stringify({params:params}), function (data, textStatus, jqXHR) {
 				if (data.title) {
-					var msg = '[ ' + data.title + ' ] 添加成功！</br>' + (data.update ? '系统检测到该书签之前添加过，只更新链接，描述，标题，分类。创建日期与最后点击日期不更新！' : '') + '</br>窗口 3 秒后自动关闭。';
-					toastr.success(msg, "提示");
-					setTimeout(() => {
-						window.close();
-					}, 3000)
+					var msg = '[ ' + data.title + ' ] 添加成功！\n' + (data.update ? '系统检测到该书签之前添加过，只更新链接，描述，标题，分类。创建日期与最后点击日期不更新！' : '') + '\n窗口 3 秒后自动关闭。';
+					var bg = chrome.extension.getBackgroundPage();
+					bg.showMsg(msg, "书签添加成功", 3000);
+					window.close();
 				} else {
 					toastr.error('[ ' + params.title + ' ] 添加失败', "提示");
 				}
