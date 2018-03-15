@@ -5,7 +5,7 @@ function showMsg(body, title, time) {
 		dir: "auto",  
 		tag: "bookmark",  
 		body: body,  
-		icon: "img/icon.png",
+		icon: "img/note.png",
 		renotify: true,
 	});
 
