@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "Pridávanie..."
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "Záložka úspešne pridaná"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "Pridávanie záložky zlyhalo"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Odoslať do záložiek Atavi"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Odoslať odkaz do záložiek"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "Vizuálne záložky, synchronizácia záložiek medzi rôznymi prehliadačmi a absolútna bezpečnosť pre vaše záložky"
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Atavi – správca záložiek"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "Vizuálne záložky, synchronizácia záložiek medzi rôznymi prehliadačmi a absolútna bezpečnosť pre vaše záložky"
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "Import záložiek"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "Spustiť import vašich záložiek"
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "Vybrať všetky"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "Vaše záložky boli úspešne importované!"
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "Všetky"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Záložky Atavi.com"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "Nemáte žiadne záložky na import"
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "Názov lokality"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Zrušiť"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "Zmazať"
+   },
+   "pageaction_error_delete": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Zmazanie záložky zlyhalo. Skúste to znovu neskôr"
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Záložky Atavi.com"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "Pridať"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "Uložiť"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "Pridať do záložiek Atavi"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "Spätná odozva"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "Budeme radi, ak nám pošlete svoje otázky, upozornenia na chyby či nápady týkajúce sa nástroja Atavi na adresu support@atavi.com"
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Atavi.com nepodporuje viacúrovňovú štruktúru priečinkov. Všetky podpriečinky budú umiestnené na jednu úroveň. Priečinky s rovnakým názvom budú zlúčené do jedného."
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "Otvorte správcu záložiek Atavi na novej karte"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "Uložiť"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "Synchronizácia"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "Nastavenia"
+   }
+}

@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "Ekleniyor..."
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "Yer imi başarıyla eklendi"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "Yer imi eklenemedi"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Atavi yer imlerine gönder"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Bağlantıyı yer imlerine gönder"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "Görsel yer imleri, farklı tarayıcılar arasında yer imi eşitleme ve tüm yer imleriniz için yüksek güvenlik."
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Atavi - yer imi yöneticisi"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "Görsel yer imleri, farklı tarayıcılar arasında yer imi eşitleme ve tüm yer imleriniz için yüksek güvenlik."
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "Yer imleri al"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "Yer imlerinizi almaya başlayın"
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "Tümünü seç"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "Yer imleriniz başarıyla alındı!"
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "Tümü"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Atavi.com yer imleri"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "Alınacak hiçbir yer iminiz yok"
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "Site adı"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "İptal"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "Sil"
+   },
+   "pageaction_error_delete": {
+      "description": "Ошибка при удалении закладки",
+      "message": "Yer imi silme başarısız. Daha sonra tekrar deneyin"
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Atavi.com yer imleri"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "Ekle"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "Kaydet"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "Atavi yer imlerine ekle"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "Geribildirim"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "Soru sormak, hata bildiriminde bulunmak veya Atavi hakkında görüş bildirmek için support@atavi.com adresine e-posta gönderebilirsiniz"
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Atavi.com çok seviyeli klasör yapısını desteklemez. Tüm alt klasörler bir seviyeye yerleştirilecektir. Aynı ada sahip klasörler tek bir klasör halinde birleştirilecektir."
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "Atavi yer işareti yöneticisini yeni sekmede açın"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "Kaydet"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "Eşitleme"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "Ayarlar"
+   }
+}

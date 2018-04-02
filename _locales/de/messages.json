@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "Setzt zu..."
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "Lesezeichen ist erfolgreich zugesetzt"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "Es gab ein Fehler beim Hinzufügung"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Senden im Lesezeichen Atavi"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Senden das Link in Lesezeichen"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "Synchronisation von Lesezeichen mit alle Geräten und Browsers"
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Atavi - Lesezeichen-Manager"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "Synchronisation von Lesezeichen mit alle Geräten und Browsers"
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "Import von Lesezeichen"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "Import beginnen"
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "Alle auswählen"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "Import wurde erfolgreich beendet!"
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "Alle"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Lesezeichen Atavi.com"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "Es gibt keine Lesezeichen für Import"
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "Websitename"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Abbrechen"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "Löschen"
+   },
+   "pageaction_error_delete": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Löschung von Lesezeischen ist unmöglich. Prüfen Sie noch einmal später"
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Lesezeichen Atavi.com"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "Hinzufügen"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "Sparen"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "Hinzufügen in Lesezeichen Atavi"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "Feedback"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "Bei Fragen, Fehlermeldungen oder neuen Ideen zu Atavi senden Sie eine E-Mail an support@atavi.com"
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Atavi.com unterstützt keine Ordnerstrukturen mit mehreren Ebenen. Alle Unterordner werden auf einer Ebene platziert. Ordner mit dem gleichen Namen werden in einem Ordner zusammengefasst."
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "Öffnen Sie den Atavi-Lesezeichenmanager in einer neuen Registerkarte"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "Speichern"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "Synchronisierung"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "Einstellungen"
+   }
+}

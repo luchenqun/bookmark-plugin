@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "Dodawanie..."
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "Zakładka została dodana"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "Nie udało się dodać zakładki"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Wyślij do zakładek Atavi"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Wyślij link do zakładek"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "Wizualne zakładki, synchronizacja zakładek w różnych przeglądarkach i absolutne bezpieczeństwo zakładek"
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Zakładki Atavi"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "Zakładki wizualne, synchronizacja zakładek w różnych przeglądarkach i absolutne bezpieczeństwo zakładek"
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "Importuj zakładki"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "Rozpocznij import"
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "Zaznacz wszystko"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "Twoje zakładki zostały zaimportowane!"
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "Wszystko"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Zakładki Atavi.com"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "Nie masz żadnych zakładek do importu"
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "Nazwa strony"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Anuluj"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "Usuń"
+   },
+   "pageaction_error_delete": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Nie udało się usunąć zakładki. Spróbuj ponownie później"
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Zakładki Atavi.com"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "Dodaj"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "Zapisz"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "Dodaj do zakładek Atavi"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "Opinie"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "Wszelkie pytania, zgłoszenia wykrytych błędów i pomysły dotyczące funkcjonalności Atavi prosimy wysyłać na adres support@atavi.com"
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Atavi.com nie obsługuje wielopoziomowych struktur folderów. Wszystkie podfoldery zostaną umieszczone na jednym poziomie. Foldery o tej samej nazwie zostaną scalone."
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "Otwórz menedżer zakładek Atavi w nowej karcie"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "Zapisz"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "Synchronizowanie"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "Ustawienia"
+   }
+}

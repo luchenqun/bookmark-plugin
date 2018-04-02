@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "Añadiendo..."
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "Marcador añadido correctamente"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "En el proceso de adición ha ocurrido un error"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Enviar a marcadores Atavi"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Enviar un hiperenlace a marcadores Atavi"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "La sincronización de marcadores entre todos sus ordenadores, navegadores y dispositivos"
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Atavi - administrador de marcadores"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "La sincronización de marcadores entre todos sus ordenadores, navegadores y dispositivos"
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "Importación de marcadores"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "Iniciar la importación"
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "Seleccionar todo"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "¡La importación se ha completado!"
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "Todo"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Marcadores Atavi.com"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "Vd. no tiene marcadores para la importación."
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "Título del sitio web"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Cancelar"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "Eliminar"
+   },
+   "pageaction_error_delete": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "No es posible eliminar este marcador. Por favor, vuelve a intentarlo de nuevo más tarde."
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Marcadores Atavi.com"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "Añadir"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "Guardar"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "Añadir a marcadores Atavi"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "Opiniones"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "Si tiene alguna duda, encuentra algún error o desea hacernos llegar ideas relacionadas con Atavi, no dude en enviarnos un correo electrónico a support@atavi.com."
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Atavi.com no es compatible con estructuras de carpetas multinivel. Todas las subcarpetas se colocarán en un nivel. Las carpetas con el mismo nombre se combinarán en una."
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "Abra el administrador de marcadores Atavi en una nueva pestaña"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "Guardar"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "Sincronización"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "Configuración"
+   }
+}

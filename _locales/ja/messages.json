@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "追加中．．．"
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "ブックマークが追加されました"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "ブックマーク追加に失敗しました"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Ataviブックマークに送信"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "リンクをブックマークに送信"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "全デバイスとブラウザーのブックマークを同期"
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Atavi－ブックマークマネージャ"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "全デバイスとブラウザーのブックマークを同期"
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "ブックマークインポート"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "インポート開始"
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "すべてを選択"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "インポートが完了しました！"
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "すべて"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Atavi.comのブックマーク"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "インポートできるブックまーが存在しておりません"
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "サイト名"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "キャンセル"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "削除"
+   },
+   "pageaction_error_delete": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "ブックマークの削除に失敗しました。後でもう一度お試しください"
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Atavi.comのブックマーク"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "追加"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "変更"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "Ataviブックマークに追加"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "フィードバック"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "ご質問、バグの報告、Atavi に対するご意見等は、support@atavi.com までご連絡ください。"
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Atavi.com は多層フォルダ構造はサポートしていません。サブフォルダはすべて1つのレベルにまとめられます。同一名のフォルダは1つにまとめられます。"
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "新しいタブで、Atavi ブックマーク・マネージャを開いてください"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "保存"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "同期"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "設定"
+   }
+}

@@ -1,0 +1,57 @@
+{
+   "background": {
+      "page": "background/page.html"
+   },
+   "chrome_settings_overrides": {
+      "homepage": "http://atavi.com/?from=ext-chrome"
+   },
+   "chrome_url_overrides": {
+      "newtab": "index.html"
+   },
+   "commands": {
+      "_execute_page_action": {
+         "suggested_key": {
+            "default": "Ctrl+Shift+S",
+            "mac": "MacCtrl+Shift+S"
+         }
+      }
+   },
+   "content_scripts": [ {
+      "css": [ "c/common.css" ],
+      "js": [ "AtaviExt.js", "includes/common.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_extension_description__",
+   "externally_connectable": {
+      "ids": [ "cppkdfiehodeplgalcinpklndfdmccba", "pcacinjbimcceegjmilcmllbagjjelef", "jpchabeoojaflbaajmjhfcfiknckabpo", "fhdbapfgnkbpnkffmjkjofblcmmgonia", "dpmijkcjnkemjnlkjcghoagimgolaofh", "kdbcpidbakbgbgclbjldlelbafohkagp", "kjpbnomffmmmdnedadahoflodnabckoi", "nmebjojifckgfojmficpdnlglgcifhjd", "ckpifcbkpbdakjgcigilkdhhfbmgcfdh" ],
+      "matches": [ "*://*.atavi.com/*" ]
+   },
+   "homepage_url": "http://atavi.com",
+   "icons": {
+      "128": "i/icon128.png",
+      "16": "i/icon16.png",
+      "19": "i/icon19.png",
+      "32": "i/icon32.png",
+      "48": "i/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsyTb0WH/AHpJYXQIqYYtckcKCSsD8L1lRkfPZpupTpvDkqLbBRTDTO/SleUyqen89pNnIdwB/35TND9nU7fsduDiVuIehJpBQG1pt3Ka0Q7SM7Cwf/EfwJSjDaVnZP3FilJr9sLV3MJiTXiT3BM21Sb0hr4OMYxUs0OlPVGBUfzAxTyyKbHPtjtDUBQXPFbfnUwbLlS0fd9m4EirIfCEhqgaQggA5JkGlE+x6SIyWCGMaCWAXYkmfMuVSSQrmcWXbnTKXhWXDOGfsFvhxyuTBVf8/l5hSK2JJMEgrqNTvUqunROaLwTSFtwn6GGr+ftS2StH7o3PLgayJJHMqKar6QIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_extension_name__",
+   "omnibox": {
+      "keyword": "atavi"
+   },
+   "optional_permissions": [ "management" ],
+   "options_page": "options/index.html",
+   "page_action": {
+      "default_icon": "i/icon19.png",
+      "default_popup": "create/index.html",
+      "default_title": "__MSG_pageaction_title__"
+   },
+   "permissions": [ "contextMenus", "activeTab", "bookmarks", "tabs", "*://atavi.com/", "*://*.atavi.com/", "*://www.toppage.test/*", "cookies", "storage" ],
+   "short_name": "__MSG_extension_shortname__",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2.4",
+   "web_accessible_resources": [ "includes/inject.js", "config.json" ]
+}

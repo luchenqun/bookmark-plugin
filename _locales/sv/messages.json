@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "Lägger till..."
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "Bokmärket las till"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "Kunde inte lägga till bokmärket"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Skicka till Atavi-bokmärken"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Skicka länken till bokmärken"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "Visuella bokmärken, bokmärkena synkas över flera webbläsare med fullkomlig säkerhet"
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Atavi – bokmärkeshanterare"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "Visuella bokmärken, bokmärkena synkas över flera webbläsare med fullkomlig säkerhet"
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "Importera bokmärken"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "Starta import av dina bokmärken"
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "Välj alla"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "Dina bokmärken har importerats!"
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "Alla"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Atavi.com-bokmärken"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "Du har inga bokmärken att importera"
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "Webbplatsens namn"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Avbryt"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "Radera"
+   },
+   "pageaction_error_delete": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Kunde inte radera bokmärket. Försök igen senare"
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Atavi.com-bokmärken"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "Lägg till"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "Spara"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "Lägg till i Atavi-bokmärken"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "Feedback"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "Ställ gärna frågor, rapportera buggar eller skicka in dina förslag om Atavi till support@atavi.com"
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Atavi.com saknar stöd för mappstrukturer med flera nivåer. Alla undermappar kommer att placeras på en nivå. Mappar med samma namn kommer att slås samman till en."
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "Öppna Atavi i en ny flik"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "Spara"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "Synkning"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "Inställningar"
+   }
+}

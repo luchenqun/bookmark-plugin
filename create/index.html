@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>Atavi.com</title>
+		<link type="text/css" rel="stylesheet" href="common.css" />
+	</head>
+	<body class="process" id="js-body">
+		<div style="height: 20px">
+			<a href="http://atavi.com/?from=ext-chrome" class="site_link" id="js-site-link" target="_blank">__Закладки Atavi.com__</a>
+			<a href="#" class="delete" id="js-delete">__Удалить__</a>
+			<div class="cl"></div>
+		</div>
+		
+		<div id="js-create">
+			<form action="/bookmark/create/" method="post" id="js-create-form" style="display: none;">
+				<div class="section"  id="js-section-caption">
+					<input class="field" maxlength="250" placeholder="__Название сайта__" tabindex="1" name="caption" id="js-caption" type="text">			
+					<input name="url" id="js-url" type="hidden">			
+					<div class="em">
+						<div class="nipple-right"></div>
+						<span class="em_" id="caption_em_"></span>
+					</div>
+				</div>
+		
+				<div class="section" id="js-section-groupid">
+					<select class="field" tabindex="2" name="groupid" id="js-groupid"></select>
+					<div class="em">
+						<div class="nipple-right"></div>
+						<span class="em_" id="group_id_em_"></span>
+					</div>
+				</div>
+				
+				<div class="section buttons">
+					<input class="submit" tabindex="3" type="submit" id="js-submit" value="__Добавить__">
+					<a class="close" id="js-close" tabindex="4" href="#">__Отменить__</a>
+					<div class="cl"></div>
+				</div>
+			</form>
+		</div>
+		<div class="load"></div>
+		<script type="text/javascript" src="common.js"></script>
+	</body>
+</html>

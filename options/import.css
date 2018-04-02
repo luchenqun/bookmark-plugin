@@ -1,0 +1,96 @@
+body {
+	background-color: #f1f5f7;
+}
+body,h1,p,div,a,label {
+	font-family: 'Open Sans', sans-serif;
+	color: #2a2d35;
+}
+label {
+	font-size: 13px;
+	cursor: pointer;
+}
+input {
+	vertical-align: middle;
+}
+h1 {
+	margin-top: 50px;
+	margin-left: 260px;
+	padding: 0;
+	font-weight: normal;
+	font-size: 30px;
+}
+
+.import {
+	margin-right: 100px;
+	margin-bottom: 30px;
+}
+.import .folder-list {
+	width: 250px;
+	float: left;
+}
+.import .import-list {
+	height: 440px;
+	overflow: hidden;
+	overflow-y: scroll;
+	background-color: #fff;
+}
+.import .folder > div {
+	background: #fff;
+	padding: 5px 10px;
+}
+.import .folder > div:hover {
+	background: #eff2f4;
+}
+.import .folder label {
+	padding-left: 10px;
+}
+.import .folder label > a {
+	padding-left: 15px;
+	color: #81888d;
+}
+
+.import .checkbox-all {
+	padding: 5px 10px;
+	margin-left: 250px;
+}
+
+.import .button {
+	margin: 10px 0 0 290px;
+	padding: 8px 16px;
+	display: block;
+	background: #11a2db;
+	color: #fff;
+	font-size: 14px;
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 22px;
+	font-weight: bold;
+}
+
+.import .folder-list .folder-item {
+	font-size: 14px;
+	color: #5e6468;
+	padding: 5px 0 5px 30px;
+	margin-left: 10px;
+	cursor: pointer;
+	overflow: hidden;
+	background: url('/i/folder.png') no-repeat 5px 5px;
+}
+.import .folder-list .folder-item:hover {
+	background-color: #fff;
+}
+.import .folder-list .folder-item.active {
+	background-color: #fff;
+	background-position: 5px -22px;
+}
+.import .folder-list #js-folder-item-0 {
+	font-size: 14px;
+	color: #5e6468;
+	margin-left: 0px;
+}
+.import .preloader {
+	margin-top: 10px;
+	margin-left: 300px;
+}

@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "追加中..."
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "书签追加成功"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "书签追加錯誤"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "傳送到Atavi书签"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "链接傳送到书签"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "书签与所有的设备和浏览器同步"
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Atavi - 书签管理器"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "书签与所有的设备和浏览器同步"
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "书签导入"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "开始导入"
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "全选"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "导入成功了！"
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "全部"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Atavi.com书签"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "没有导入的书签"
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "网站名称"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "取消"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "删除"
+   },
+   "pageaction_error_delete": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "无法删除书签。请稍后再试"
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Atavi.com书签"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "追加"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "更改"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "追加到Atavi书签"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "反馈"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "请发送电子邮件至 support@atavi.com 询问问题、报告程序缺陷或告诉我们您的想法"
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Atavi.com 不支持多层文件夹结构。所有子文件夹将被放置在一层中。同名的文件夹将被合并为一个文件夹。"
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "在新选项卡中打开 Atavi 书签管理器"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "保存"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "同步"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "设置"
+   }
+}

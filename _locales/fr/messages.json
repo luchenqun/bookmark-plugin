@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "La page est en train d'être ajouté"
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "Le marque-page est ajouté"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "En train d'ajout une erreur est apparue"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Envoyer cette page aux favoris de Atavi"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Envoyer le lien aux favoris"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "Synchronisations des marque-pages sur tous vos ordinateurs, appareils et navigateurs"
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Atavi - Gestionnaire des signets"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "Synchronisations des marque-pages sur tous vos ordinateurs, appareils et navigateurs"
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "Importation des marque-pages"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "Commencer l'importation "
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "Sélectionner tout"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "L'importation est terminée."
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "Tout"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Marque-pages Atavi.com"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "Vous n'avez pas de marque-pages pour l'importation."
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "Titre de site"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Annuler"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "Supprimer"
+   },
+   "pageaction_error_delete": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Il est impossible de supprimer ce marque-page. Veillez essayer plus tard"
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Marque-pages Atavi.com"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "Ajouter"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "Modifier"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "Ajouter aux favoris sur Atavi"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "Commentaires"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "N'hésitez pas à poser des questions, à signaler des bugs ou à soumettre vos idées d'amélioration d'Atavi via l'adresse e-mail support@atavi.com"
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Atavi.com ne prend pas en charge les structures de dossiers à plusieurs niveaux. Tous les sous-dossiers seront placés sur un niveau. Les dossiers portant le même nom seront fusionnés."
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "Ouvrir le gestionnaire de signets Atavi dans un nouvel onglet"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "Enregistrer"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "Synchronisation"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "Paramètres"
+   }
+}

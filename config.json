@@ -1,0 +1,16 @@
+{
+	"extensions": [
+		{"name": "new-atavi-bookmark-manager", "id": "cppkdfiehodeplgalcinpklndfdmccba"},
+		{"name": "atavi-quick-access", "id": "pcacinjbimcceegjmilcmllbagjjelef"},
+		{"name": "atavi-bookmark-manager", "id": "jpchabeoojaflbaajmjhfcfiknckabpo"},
+		{"name": "atavi-change-new-tab", "id": "fhdbapfgnkbpnkffmjkjofblcmmgonia"},
+		{"name": "speed-dial-atavi", "id": "dpmijkcjnkemjnlkjcghoagimgolaofh"},
+		{"name": "page-up-button-atavi", "id": "kdbcpidbakbgbgclbjldlelbafohkagp"},
+		{"name": "start-page-atavi", "id": "kjpbnomffmmmdnedadahoflodnabckoi"},
+		{"name": "favorite-links-atavi", "id": "nmebjojifckgfojmficpdnlglgcifhjd"},
+		{"name": "smooth-scroll-atavi", "id": "ckpifcbkpbdakjgcigilkdhhfbmgcfdh"}
+	],
+	"features": ["context-menu"],
+	"referent": "ext-chrome",
+	"canManage": true
+}

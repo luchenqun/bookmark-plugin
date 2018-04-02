@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "Dodavanje..."
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "Knjižna oznaka uspješno dodana"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "Dodavanje knjižne oznake nije uspjelo"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Pošalji u Atavi knjižne oznake"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Pošalji poveznicu u knjižne oznake"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "Vizualne knjižne oznake, sinkronizacija knjižnih oznaka za različite preglednike i apsolutna zaštita za vaše knjižne oznake"
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Atavi - upravitelj knjižnih oznaka"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "Vizualne knjižne oznake, sinkronizacija knjižnih oznaka za različite preglednike i apsolutna zaštita za vaše knjižne oznake"
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "Uvoz knjižnih oznaka"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "Počnite uvoziti svoje knjižne oznake"
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "Odaberi sve"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "Vaše su knjižne oznake uspješno uvezene!"
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "Sve"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Knjižne oznake Atavi.com"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "Nemate knjižnih oznaka za uvoz"
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "Naziv stranice"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Odustani"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "Izbriši"
+   },
+   "pageaction_error_delete": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Brisanje knjižne oznake nije uspjelo. Pokušajte ponovo kasnije"
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Knjižne oznake Atavi.com"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "Dodaj"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "Spremi"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "Dodaj u Atavi knjižne oznake"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "Povratne informacije"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "Slobodno nam postavljajte pitanja, prijavljujte pogreške u radu ili šaljite svoje ideje o servisu Atavi na adresu support@atavi.com"
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Atavi.com ne podržava strukturu mapa na više razina. Sve podmape bit će stavljene na jednu razinu. Mape istog naziva bit će spojene u jednu."
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "Otvorite Atavi upravitelj knjižnih oznaka u novoj kartici"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "Spremi"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "Sinkronizacija"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "Postavke"
+   }
+}

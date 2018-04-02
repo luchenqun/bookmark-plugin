@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "Добавляется..."
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "Закладка добавлена"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "Произошла ошибка при добавлении"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Отправить в закладки на Atavi"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Отправить в закладки ссылку"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "Визуальные закладки, надежная сохранность и синхронизация закладок между браузерами"
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Atavi - менеджер закладок"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "Визуальные закладки, надежная сохранность и синхронизация закладок между браузерами"
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "Импорт закладок"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "Начать импорт"
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "Выбрать все"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "Импорт успешно завершён!"
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "Все"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Закладки Atavi.com"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "Нет закладок для импорта"
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "Название сайта"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Отменить"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "Удалить"
+   },
+   "pageaction_error_delete": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Невозможно удалить закладку. Попробуйте позже"
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Закладки Atavi.com"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "Добавить"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "Изменить"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "Добавить в закладки на Atavi"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "Обратная связь"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "Ждем ваши пожелания по улучшению сервиса и этого продукта на support@atavi.com"
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Сервис Atavi.com не поддерживает многоуровневую структуру закладок. Все вложенные папки будут перенесены на один уровень. Папки с одинаковым названием будут объединены в одну"
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "Открыть в новой вкладке менеджер закладок Atavi"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "Сохранить"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "Синхронизация"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "Настройки"
+   }
+}

@@ -1,0 +1,149 @@
+body {
+	background-color: #f1f5f7;
+	color: #2a2d35;
+}
+body,h1,p,div,a,label,h2 {
+	font-family: 'Open Sans', sans-serif;
+}
+label {
+	font-size: 13px;
+	cursor: pointer;
+}
+input {
+	vertical-align: middle;
+}
+h1 {
+	margin-top: 50px;
+	margin-left: 260px;
+	padding: 0;
+	font-weight: normal;
+	font-size: 30px;
+	color: #2a2d35;
+}
+h2 {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 10px;
+	font-weight: 300;
+	font-size: 24px;
+	color: #2a2d35;
+}
+.logo {
+	width: 128px;
+	height: 40px;
+	display: block;
+	margin: 25px auto;
+}
+.wrapper {
+	padding: 0 7%;
+	width: 86%;
+	margin-bottom: 30px;
+}
+.wrapper:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+.settings {
+	width: 45%;
+	min-width: 570px;
+	margin: 0 auto 30px;
+	overflow: hidden;
+	background-color: #fff;
+	padding: 20px;
+	color: #5e6468;
+}
+.settings .settings-list {
+	margin-bottom: 30px;
+}
+.settings .settings-list > .item {
+	background: #fff;
+	padding: 5px 10px;
+}
+.settings .settings-list > .item:hover {
+	background: #eff2f4;
+}
+.settings .settings-list label {
+	padding-left: 10px;
+}
+.settings .settings-list label > a {
+	padding-left: 15px;
+	color: #81888d;
+}
+
+.settings .checkbox-all {
+	padding: 5px 10px;
+	margin-left: 250px;
+}
+
+.button {
+	padding: 8px 16px;
+	display: block;
+	background: #11a2db;
+	color: #fff;
+	font-size: 14px;
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+	text-align: center;
+	border-radius: 22px;
+	font-weight: bold;
+}
+.import-button {
+	float: right;
+	width: 40%;
+	padding: 8px 0;
+;
+}
+.import-text {
+	width: 50%;
+	float: left;
+	text-align: left;
+}
+.save-button {
+	margin: 25px auto;
+}
+.settings .preloader {
+	margin-top: 10px;
+	margin-left: 300px;
+}
+.sync {
+	margin: 0 auto;
+	width: 480px;
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+.sync:after {
+	content:"";
+	display:table;
+	clear:both;
+}
+.sync a{
+	display: block;
+	width: 120px;
+	height: 40px;
+	float: left;
+	text-align: center;
+	line-height: 102px;
+	color: #A9A9A9;
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: none;
+	cursor: pointer;
+	background: url('/i/browsers.png') no-repeat 52px 15px;
+}
+.sync a.chrome {
+	background-position: -174px 0;
+}
+.sync a.opera {
+	background-position: -61px 0;
+}
+.sync a.safari {
+	background-position: -281px 0;
+}
+.sync a.firefox {
+	background-position: -393px 0;
+}
+.sync a.play {
+	background-position: -501px 0;
+}

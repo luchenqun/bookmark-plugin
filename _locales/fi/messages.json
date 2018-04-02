@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "Lisätään..."
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "Kirjanmerkki lisätty onnistuneesti"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "Kirjanmerkin lisäys epäonnistui"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Lähetä Atavi-kirjanmerkkeihin"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Lähetä linkki kirjanmerkkeihin"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "Visuaaliset kirjanmerkit, kirjanmerkkien synkronointi selaimesta toiseen ja kirjanmerkkiesi ehdoton turvallisuus"
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Atavi - kirjanmerkkihallinta"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "Visuaaliset kirjanmerkit, kirjanmerkkien synkronointi selaimesta toiseen ja kirjanmerkkiesi ehdoton turvallisuus"
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "Tuo kirjanmerkit"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "Aloita kirjanmerkkiesi tuonti"
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "Valitse kaikki"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "Kirjanmerkkisi on tuotu onnistuneesti!"
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "Kaikki"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Atavi.com-kirjanmerkit"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "Sinulla ei ole tuotavia kirjanmerkkejä"
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "Sivuston nimi"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Peruuta"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "Poista"
+   },
+   "pageaction_error_delete": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Kirjanmerkin poisto epäonnistui. Yritä myöhemmin uudestaan"
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Atavi.com-kirjanmerkit"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "Lisää"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "Tallenna"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "Lisää Atavi-kirjanmerkkeihin"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "Palaute"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "Tee kysymyksiä, raportoi virheistä tai lähetä ideoitasi Atavista osoitteeseen support@atavi.com"
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Atavi.com ei tue monitasoista kansiorakennetta. Kaikki alikansiot asetetaan yhteen tasoon. Samannimiset kansiot sulautetaan yhteen."
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "Avaa Atavi-kirjanmerkkihallinta uudessa välilehdessä"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "Tallenna"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "Synkronointi"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "Asetukset"
+   }
+}

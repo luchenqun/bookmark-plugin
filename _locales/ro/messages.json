@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "Adăugare..."
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "Marcaj adăugat cu succes"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "Adăugare marcaj eșuată"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Trimitere la marcajele Atavi"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Trimitere link la marcaje"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "Marcaje vizuale, sincronizarea marcajelor între browsere diferite și siguranță absolută pentru marcajele dvs"
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Atavi - manager de marcaje"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "Marcaje vizuale, sincronizarea marcajelor între browsere diferite și siguranță absolută pentru marcajele dvs"
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "Import marcaje"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "Inițiere import marcaje"
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "Selectare toate"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "Marcajele au fost importate cu succes!"
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "Toate"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Marcaje Atavi.com"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "Nu există niciun marcaj de importat"
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "Nume site"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Anulare"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "Ștergere"
+   },
+   "pageaction_error_delete": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Adăugare marcaj eșuată. Încercați mai târziu"
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Marcaje Atavi.com"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "Adăugare"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "Salvare"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "Adăugare la marcajele Atavi"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "Feedback"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "Dacă aveți întrebări, doriți să raportați erori sau să ne trimiteți ideile voastre, ne puteți contacta la adresa support@atavi.com"
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Atavi.com nu acceptă o structură de foldere pe mai multe nivele. Toate subfolderele vor fi la același nivel. Folderele cu aceeași denumire vor fi îmbinate într-unul singur."
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "Deschideți managerul de marcaje Atavi într-o filă nouă"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "Salvare"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "Sincronizare"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "Setări"
+   }
+}

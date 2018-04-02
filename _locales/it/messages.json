@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "Inclusione..."
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "Segnalibro aggiunto correttamente"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "Impossibile aggiungere il segnalibro"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Invia ad Atavi bookmarks"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Invia il collegamento ai segnalibri"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "Segnalibri visivi, sincronizzazione segnalibri su diversi browser e sicurezza assoluta per i tuoi segnalibri"
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Atavi bookmark manager"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "Segnalibri visivi, sincronizzazione segnalibri su diversi browser e sicurezza assoluta per i tuoi segnalibri"
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "Importa segnalibri"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "Avvia l'importazione dei tuoi segnalibri"
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "Seleziona tutto"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "Segnalibri importati correttamente!"
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "Tutti"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Atavi.com bookmarks"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "Nessun segnalibro da importare"
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "Nome sito"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Annulla"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "Elimina"
+   },
+   "pageaction_error_delete": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Impossibile eliminare il segnalibro. Riprovare in un secondo momento"
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Atavi.com bookmarks"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "Aggiungi"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "Salva"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "Aggiungi ad Atavi bookmarks"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "Feedback"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "Inviaci pure domande, segnalazioni di bug o idee su Atavi all'indirizzo support@atavi.com"
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Atavi.com non supporta strutture di cartelle a più livelli. Tutte le sottocartelle saranno posizionate allo stesso livello. Le cartelle aventi nomi coincidenti saranno unite in un'unica cartella."
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "Apri Atavi bookmark manager in una nuova scheda"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "Salva"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "Sincronizzazione"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "Impostazioni"
+   }
+}

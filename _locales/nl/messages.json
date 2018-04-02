@@ -1,0 +1,122 @@
+{
+   "bookmark_process_add": {
+      "description": "В процессе добавления закладки",
+      "message": "Toevoegen..."
+   },
+   "bookmark_process_added": {
+      "description": "Закладка добавлена",
+      "message": "Bladwijzer toegevoegd"
+   },
+   "bookmark_process_error": {
+      "description": "Закладка не добавлена",
+      "message": "Toevoegen bladwijzer mislukt"
+   },
+   "contextmenu_title_all": {
+      "description": "Кнопка в контекстном меню",
+      "message": "Naar Atavi bladwijzers versturen"
+   },
+   "contextmenu_title_link": {
+      "description": "Кнопка в контекстном меню",
+      "message": "De koppeling naar de bladwijzers versturen"
+   },
+   "extension_description": {
+      "description": "Описание расширения в манифесте",
+      "message": "Visuele bladwijzers, bladwijzers synchroniseren tussen diverse browsers en absolute veiligheid voor uw bladwijzers"
+   },
+   "extension_name": {
+      "description": "Название расширения в манифесте",
+      "message": "Atavi - bladwijzermanager"
+   },
+   "extension_shortname": {
+      "description": "Короткое название расширения в манифесте",
+      "message": "Visuele bladwijzers, bladwijzers synchroniseren tussen diverse browsers en absolute veiligheid voor uw bladwijzers"
+   },
+   "options_import_bookmark": {
+      "description": "Заголовок раздела импорта закладок из браузера",
+      "message": "Bladwijzers importeren"
+   },
+   "options_import_button_start": {
+      "description": "Кнопка начала импорта закладок из браузера",
+      "message": "Beginnen met importeren bladwijzers"
+   },
+   "options_import_checkbox_all": {
+      "description": "Подпись к чекбоксу Выбрать все",
+      "message": "Alles selecteren"
+   },
+   "options_import_finish": {
+      "description": "Сообщение об успешном завершении импорта",
+      "message": "Uw bladwijzers zijn geïmporteerd!"
+   },
+   "options_import_folder_all": {
+      "description": "Папка со Всеми закладками",
+      "message": "Alles"
+   },
+   "options_import_goto_atavi": {
+      "description": "Перейти на Atavi.com",
+      "message": "Atavi.com bladwijzers"
+   },
+   "options_import_notfound": {
+      "description": "Сообщение после запуска импорта закладок, нет закладок",
+      "message": "U heeft geen bladwijzers om te importeren"
+   },
+   "pageaction_caption": {
+      "description": "Плейсхолдер для поля Название сайта",
+      "message": "Naam site"
+   },
+   "pageaction_close": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Annuleren"
+   },
+   "pageaction_delete": {
+      "description": "Ссылка на удаление закладки",
+      "message": "Verwijderen"
+   },
+   "pageaction_error_delete": {
+      "description": "Кнопка отмены, закрытия окна",
+      "message": "Verwijderen bladwijzer mislukt. Probeer het later nog eens"
+   },
+   "pageaction_link": {
+      "description": "Ссылка для перехода на сайт проекта в форме добавления",
+      "message": "Atavi.com bladwijzers"
+   },
+   "pageaction_submit_create": {
+      "description": "Кнопка создания закладки",
+      "message": "Toevoegen"
+   },
+   "pageaction_submit_edit": {
+      "description": "Кнопка сохранения изменений закладки",
+      "message": "Opslaan"
+   },
+   "pageaction_title": {
+      "description": "Заголовок иконки в адресной строке",
+      "message": "Toevoegen aan Atavi bladwijzers"
+   },
+   "settings_feedback": {
+      "description": "Заголовок раздела обратной связи",
+      "message": "Feedback"
+   },
+   "settings_feedback_text": {
+      "description": "Текст раздела обратной связи",
+      "message": "Stuur uw vragen, foutmeldingen suggesties voor Atavi naar support@atavi.com"
+   },
+   "settings_import_warning": {
+      "description": "Предупреждение о структуре папок при импорте",
+      "message": "Atavi.com ondersteunt geen mappenstructuur met meerdere lagen. Alle submappen worden op gelijke hoogte geplaatst. Mappen met dezelfde naam worden samengevoegd tot één map."
+   },
+   "settings_newtab": {
+      "description": "Пункт открыть атави в новой вкладке",
+      "message": "Open de Atavi bladwijzermanager in een nieuw tabblad"
+   },
+   "settings_save": {
+      "description": "Кнопка сохранения настроек",
+      "message": "Opslaan"
+   },
+   "settings_sync": {
+      "description": "Заголовок раздела синхронизации",
+      "message": "Synchroniseren"
+   },
+   "settings_title": {
+      "description": "Заголовок на странице настроек",
+      "message": "Instellingen"
+   }
+}

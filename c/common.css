@@ -1,0 +1,15 @@
+.atavi-message {
+	height: 22px;
+	padding: 1px 8px;
+	position: absolute;
+	z-index: 9999;
+	top: 0;
+	right:0;
+	position: fixed;
+	display: block;
+	background-color: #999;
+	color: #fff;
+	font-size: 12px;
+	line-height: 20px;
+	text-align: center;
+}
