@@ -25,7 +25,7 @@
 
 <body>
 	<form class="ui form">
-		<h3 class="ui header">添加书签</h3>
+		<h3 class="ui header">添加书签/备忘</h3>
 		<div class="ui divider"  style="margin-top:20px;margin-bottom:20px"></div>
 		<div class="required field">
 			<div class="fields">
@@ -55,8 +55,8 @@
 			</div>
 		</div>
 		<div class="field">
-			<label>描述</label>
-			<textarea rows="5" id="js-desc" placeholder="可以是网站的说明，也可以备忘一下账号或者摘抄内容，就算公开你的链接，这个也只有自己能在详情里面看到"></textarea>
+			<label>描述/备忘</label>
+			<textarea rows="5" id="js-desc" placeholder="如果添加书签，可以是网站的说明，也可以备忘一下账号或者摘抄内容，就算公开你的链接，这个也只有自己能在详情里面看到。&#13;&#10;&#13;&#10;如果添加备忘，请选择一个分类再输入备忘内容，然后点击 添加备忘 按钮！"></textarea>
 		</div>
 		<div class="field">
 			<div class="ui checkbox js-public checked">
@@ -64,9 +64,10 @@
 				<label>我要公开此收藏的链接供别人搜索</label>
 			</div>
 		</div>
-		<div class="actions" style="margin-left:600px">
-			<div class="ui cancel button js-cancel" style="cursor:default;margin-right:15px">取消</div>
-			<div class="ui green button js-send" style="cursor:default;margin-right:-5px">发送</div>
+		<div class="actions">
+			<div class="ui green button js-send-note" style="cursor:default;margin-right:-5px">添加备忘</div>
+			<div class="ui cancel button js-cancel" style="cursor:default;margin-left:475px; margin-right:15px">取消</div>
+			<div class="ui green button js-send-bookmark" style="cursor:default;margin-right:-5px">添加书签</div>
 		</div>
 	</form>
 </body>

@@ -94,7 +94,7 @@ function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallb
 			window.close();
 		});
 
-		$('.js-send').click(() => {
+		$('.js-send-bookmark').click(() => {
 			if(!login){
 				toastr.error('您必须先登陆！3秒后自动跳转到登陆页面。', "错误");
 				setTimeout(() => {
@@ -136,6 +136,47 @@ function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallb
 				}
 			}, function (xhr, textStatus) {
 				toastr.error('[ ' + params.title + ' ] 添加失败', "提示");
+			})
+		});
+
+		$('.js-send-note').click(() => {
+			if(!login){
+				toastr.error('您必须先登陆！3秒后自动跳转到登陆页面。', "错误");
+				setTimeout(() => {
+					chrome.tabs.create({ url: 'http://mybookmark.cn/#/login' });
+				}, 3000);
+			}
+
+			var tags = Array.from(selectedTags);
+			if (tags.length !== 1 ) {
+				toastr.error('您至少且最多必须选择一个分类！', "错误");
+				return;
+			}
+
+			var url = "http://mybookmark.cn/api/addNote/";
+			var params = {
+				tag_id: tags[0],
+				content: $("#js-desc").val(),
+			}
+
+			if(!params.content) {
+				toastr.error('请输入备忘内容！', "错误");
+				return;
+			}
+
+			jqAjax(url, "POST", JSON.stringify({params:params}), function (data, textStatus, jqXHR) {
+				console.log(data);
+				var brief = params.content.length > 60 ? (params.content.substring(0, 60) + ' ......') : (params.content);
+				if (data.retCode === 0) {
+					var msg = '备忘 [ ' + brief + ' ] 添加成功！\n';
+					var bg = chrome.extension.getBackgroundPage();
+					bg.showMsg(msg, "备忘录添加成功", 3000);
+					window.close();
+				} else {
+					toastr.error('备忘 [ ' + brief + ' ] 添加失败', "提示");
+				}
+			}, function (xhr, textStatus) {
+				toastr.error('备忘 [ ' + brief + ' ] 添加失败', "提示");
 			})
 		});
 	});
