@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "书签快速添加",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "快速将书签添加到系统 http://mybookmark.cn/ 中",
 	"icons": {
 		"16": "img/icon.png",

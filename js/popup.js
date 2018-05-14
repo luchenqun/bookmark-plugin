@@ -1,33 +1,9 @@
-function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallback, completeCallback) {
-	console.log(url, type, data);
-	$.ajax({
-		url: url,
-		type: type, //GET POST
-		contentType: "application/json", //必须有  
-		async: true,    //或false,是否异步
-		data: data,
-		timeout: 3000,    //超时时间
-		dataType: 'json',    //返回的数据格式：json/xml/html/script/jsonp/text
-		success: function (data, textStatus, jqXHR) {
-			successCallback && successCallback(data, textStatus, jqXHR)
-		},
-		error: function (xhr, textStatus) {
-			errorCallback && errorCallback(xhr, textStatus)
-		},
-		beforeSend: function (xhr) {
-			beforeSendCallback && beforeSendCallback(xhr)
-		},
-		complete: function () {
-			completeCallback && completeCallback();
-		}
-	})
-}
-
 (function (window) {
 	chrome.tabs.getSelected(null, function (tab) {
-		console.log(tab);
+		var bg = chrome.extension.getBackgroundPage();
+		// console.log(tab);
 		var tags = [];
-		var selectedTags = new Set();
+		var selectedTag = null;
 		var userId = null;
 		var login = false;
 		var firstSelectTag = true;
@@ -38,55 +14,46 @@ function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallb
 
 		let url = 'http://mybookmark.cn/api/tags/';
 
-		jqAjax(url, 'GET', {}, function(_tags, textStatus, jqXHR){
+		bg.jqAjax(url, 'GET', {}, function (_tags, textStatus, jqXHR) {
 			login = true;
 			tags = _tags;
 			tags.sort((a, b) => {
 				return (a.last_use > b.last_use) ? -1 : 1;
 			})
-			console.log(tags);
 			for (let tag of tags) {
 				$('#js-add-tag').before(`<div class="ui label js-tag" id="${tag.id}" style="margin:3px 10px 8px 0px;cursor:default;">${tag.name}</div>`);
 			}
-		}, function(xhr, textStatus){
-			if(xhr.status === 401){
+		}, function (xhr, textStatus) {
+			if (xhr.status === 401) {
 				toastr.error('您必须先登陆！3秒后自动跳转到登陆页面。', "错误");
 				setTimeout(() => {
-					chrome.tabs.create({ url: 'http://mybookmark.cn/#/login' });
+					chrome.tabs.create({
+						url: 'http://mybookmark.cn/#/login'
+					});
 				}, 3000);
 				login = false;
 			}
-		}, null, function(){
+		}, null, function () {
 			$(".ui.inverted.dimmer").removeClass("active");
 			if (tags.length > 0) {
 				$("#" + tags[0].id).addClass("green");
-				selectedTags.add(tags[0].id);
+				selectedTag = tags[0].id;
 			}
 
 			$("#js-add-tag").click(function () {
 				toastr.info('请到网站分类页面添加分类，3秒后自动打开新的网页。', "提示");
 				setTimeout(() => {
-					chrome.tabs.create({ url: 'http://mybookmark.cn/#/tags' });
+					chrome.tabs.create({
+						url: 'http://mybookmark.cn/#/tags'
+					});
+					window.close();
 				}, 3000);
 			});
 
 			$(".js-tag").click(function () {
-				if ($(this).hasClass("green")) {
-					$(this).removeClass("green");
-					selectedTags.delete($(this).attr("id"));
-				} else {
-					if ($(".js-tag.green").length >= 3) {
-						toastr.error('您至少要选择一个分类！最多选择三个分类！如果暂时没想到放到哪个分类，可以先选择未分类。', "错误");
-					} else {
-						if(firstSelectTag){
-							$("#"+tags[0].id).removeClass("green");
-							selectedTags.delete(tags[0].id);
-						}
-						$(this).addClass("green");
-						selectedTags.add($(this).attr("id"));
-						firstSelectTag = false;
-					}
-				}
+				$(".js-tag.green").removeClass("green");
+				selectedTag = $(this).attr("id");
+				$("#" + selectedTag).addClass("green");
 			});
 		})
 
@@ -95,10 +62,12 @@ function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallb
 		});
 
 		$('.js-send-bookmark').click(() => {
-			if(!login){
+			if (!login) {
 				toastr.error('您必须先登陆！3秒后自动跳转到登陆页面。', "错误");
 				setTimeout(() => {
-					chrome.tabs.create({ url: 'http://mybookmark.cn/#/login' });
+					chrome.tabs.create({
+						url: 'http://mybookmark.cn/#/login'
+					});
 				}, 3000);
 			}
 
@@ -108,7 +77,7 @@ function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallb
 				url: $("#js-url").val(),
 				title: $("#js-title").val(),
 				public: $('.ui.checkbox.js-public').checkbox('is checked') ? '1' : '0',
-				tags: Array.from(selectedTags),
+				tags: [selectedTag],
 				description: $("#js-desc").val()
 			}
 
@@ -116,8 +85,8 @@ function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallb
 				toastr.error('检撤到您的书签链接非法，是否忘记加http或者https了？建议直接从打开浏览器地址栏复制出来直接粘贴到输入框。', "错误");
 				return;
 			}
-			if (params.tags.length < 1 || params.tags.length > 3) {
-				toastr.error('您至少要选择一个分类！最多选择三个分类！如果暂时没想到放到哪个分类，可以先选择未分类', "错误");
+			if (!selectedTag) {
+				toastr.error('您必须要选择一个分类！可新增分类，如果暂时没想到放到哪个分类，可以先选择未分类', "错误");
 				return;
 			}
 			if (!params.title) {
@@ -125,10 +94,11 @@ function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallb
 				return;
 			}
 
-			jqAjax(url, "POST", JSON.stringify({params:params}), function (data, textStatus, jqXHR) {
+			bg.jqAjax(url, "POST", JSON.stringify({
+				params: params
+			}), function (data, textStatus, jqXHR) {
 				if (data.title) {
 					var msg = '[ ' + data.title + ' ] 添加成功！\n' + (data.update ? '系统检测到该书签之前添加过，只更新链接，描述，标题，分类。创建日期与最后点击日期不更新！' : '') + '\n窗口 3 秒后自动关闭。';
-					var bg = chrome.extension.getBackgroundPage();
 					bg.showMsg(msg, "书签添加成功", 3000);
 					window.close();
 				} else {
@@ -137,39 +107,41 @@ function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallb
 			}, function (xhr, textStatus) {
 				toastr.error('[ ' + params.title + ' ] 添加失败', "提示");
 			})
+			bg.init();
 		});
 
 		$('.js-send-note').click(() => {
-			if(!login){
+			if (!login) {
 				toastr.error('您必须先登陆！3秒后自动跳转到登陆页面。', "错误");
 				setTimeout(() => {
-					chrome.tabs.create({ url: 'http://mybookmark.cn/#/login' });
+					chrome.tabs.create({
+						url: 'http://mybookmark.cn/#/login'
+					});
 				}, 3000);
 			}
 
-			var tags = Array.from(selectedTags);
-			if (tags.length !== 1 ) {
-				toastr.error('您至少且最多必须选择一个分类！', "错误");
+			if (!selectedTag) {
+				toastr.error('您必须选择一个分类！', "错误");
 				return;
 			}
 
 			var url = "http://mybookmark.cn/api/addNote/";
 			var params = {
-				tag_id: tags[0],
+				tag_id: selectedTag,
 				content: $("#js-desc").val(),
 			}
 
-			if(!params.content) {
+			if (!params.content) {
 				toastr.error('请输入备忘内容！', "错误");
 				return;
 			}
 
-			jqAjax(url, "POST", JSON.stringify({params:params}), function (data, textStatus, jqXHR) {
-				console.log(data);
+			bg.jqAjax(url, "POST", JSON.stringify({
+				params: params
+			}), function (data, textStatus, jqXHR) {
 				var brief = params.content.length > 60 ? (params.content.substring(0, 60) + ' ......') : (params.content);
 				if (data.retCode === 0) {
 					var msg = '备忘 [ ' + brief + ' ] 添加成功！\n';
-					var bg = chrome.extension.getBackgroundPage();
 					bg.showMsg(msg, "备忘录添加成功", 3000);
 					window.close();
 				} else {
@@ -181,5 +153,3 @@ function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallb
 		});
 	});
 })(window);
-
-
