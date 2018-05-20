@@ -19,7 +19,7 @@ function showMsg(body, title, time) {
 }
 
 function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallback, completeCallback) {
-	// console.log(url, type, data);
+	//console.log(url, type, data);
 	$.ajax({
 		url: url,
 		type: type, //GET POST
@@ -44,7 +44,7 @@ function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallb
 }
 
 function addBookmark(info, tab, tagId) {
-	let url = "http://mybookmark.cn/api/addBookmark/";
+	let url = "https://mybookmark.cn/api/addBookmark/";
 	let params = {
 		id: "",
 		url: info.pageUrl,
@@ -69,7 +69,7 @@ function addBookmark(info, tab, tagId) {
 }
 
 function addNote(info, tab, tagId) {
-	let url = "http://mybookmark.cn/api/addNote/";
+	let url = "https://mybookmark.cn/api/addNote/";
 	let params = {
 		tag_id: tagId,
 		content: info.selectionText,
@@ -90,7 +90,7 @@ function addNote(info, tab, tagId) {
 }
 
 function init() {
-	jqAjax("http://mybookmark.cn/api/tags/", "GET", {}, function (tags, textStatus, jqXHR) {
+	jqAjax("https://mybookmark.cn/api/tags/", "GET", {}, function (tags, textStatus, jqXHR) {
 		chrome.contextMenus.removeAll();
 		tags.sort((a, b) => {
 			return (a.last_use > b.last_use) ? -1 : 1;

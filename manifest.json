@@ -2,7 +2,7 @@
 	"manifest_version": 2,
 	"name": "书签快速添加",
 	"version": "1.0.3",
-	"description": "快速将书签添加到系统 http://mybookmark.cn/ 中",
+	"description": "快速将书签添加到系统 https://mybookmark.cn/ 中",
 	"icons": {
 		"16": "img/icon.png",
 		"48": "img/icon.png",
@@ -44,7 +44,7 @@
 	"web_accessible_resources": [
 		"js/inject.js"
 	],
-	"homepage_url": "http://mybookmark.cn/",
+	"homepage_url": "https://mybookmark.cn/",
 	"omnibox": {
 		"keyword": "bookmark"
 	}

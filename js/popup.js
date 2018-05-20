@@ -12,7 +12,7 @@
 		$("#js-title").val(tab.title);
 		$(".ui.inverted.dimmer").addClass("active");
 
-		let url = 'http://mybookmark.cn/api/tags/';
+		let url = 'https://mybookmark.cn/api/tags/';
 
 		bg.jqAjax(url, 'GET', {}, function (_tags, textStatus, jqXHR) {
 			login = true;
@@ -28,7 +28,7 @@
 				toastr.error('您必须先登陆！3秒后自动跳转到登陆页面。', "错误");
 				setTimeout(() => {
 					chrome.tabs.create({
-						url: 'http://mybookmark.cn/#/login'
+						url: 'https://mybookmark.cn/#/login'
 					});
 				}, 3000);
 				login = false;
@@ -44,7 +44,7 @@
 				toastr.info('请到网站分类页面添加分类，3秒后自动打开新的网页。', "提示");
 				setTimeout(() => {
 					chrome.tabs.create({
-						url: 'http://mybookmark.cn/#/tags'
+						url: 'https://mybookmark.cn/#/tags'
 					});
 					window.close();
 				}, 3000);
@@ -66,12 +66,12 @@
 				toastr.error('您必须先登陆！3秒后自动跳转到登陆页面。', "错误");
 				setTimeout(() => {
 					chrome.tabs.create({
-						url: 'http://mybookmark.cn/#/login'
+						url: 'https://mybookmark.cn/#/login'
 					});
 				}, 3000);
 			}
 
-			var url = "http://mybookmark.cn/api/addBookmark/";
+			var url = "https://mybookmark.cn/api/addBookmark/";
 			var params = {
 				id: "",
 				url: $("#js-url").val(),
@@ -115,7 +115,7 @@
 				toastr.error('您必须先登陆！3秒后自动跳转到登陆页面。', "错误");
 				setTimeout(() => {
 					chrome.tabs.create({
-						url: 'http://mybookmark.cn/#/login'
+						url: 'https://mybookmark.cn/#/login'
 					});
 				}, 3000);
 			}
@@ -125,7 +125,7 @@
 				return;
 			}
 
-			var url = "http://mybookmark.cn/api/addNote/";
+			var url = "https://mybookmark.cn/api/addNote/";
 			var params = {
 				tag_id: selectedTag,
 				content: $("#js-desc").val(),
