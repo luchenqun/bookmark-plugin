@@ -139,6 +139,10 @@
 				return;
 			}
 
+			while (params.content.indexOf("\n\n\n") > 0) {
+				params.content = params.content.replace(/\n\n\n/g, "\n\n");
+			}
+
 			bg.jqAjax(url, "POST", JSON.stringify({
 				params: params
 			}), function (data, textStatus, jqXHR) {

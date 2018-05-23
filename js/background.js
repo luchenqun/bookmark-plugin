@@ -73,6 +73,11 @@ function addNote(info, tab, tagId) {
 		tag_id: tagId,
 		content: info.selectionText,
 	}
+
+	while (params.content.indexOf("\n\n\n") > 0) {
+        params.content = params.content.replace(/\n\n\n/g, "\n\n");
+	}
+	  
 	jqAjax(url, "POST", JSON.stringify({
 		params: params
 	}), function (data, textStatus, jqXHR) {
@@ -147,10 +152,24 @@ function init() {
 			});
 		}
 	}, function (xhr, textStatus) {
-		// 出错1分钟重试一次
-		setTimeout(function () {
-			init();
-		}, 60000);
+		if (xhr.status === 401) {
+			chrome.contextMenus.removeAll();
+			chrome.contextMenus.create({
+				"title": "点我登陆bookmark并重启浏览器让插件能添加书签与备忘",
+				"id": "login",
+				"contexts": ["page"],
+				"onclick": function (info, tab) {
+					chrome.tabs.create({
+						url: 'https://mybookmark.cn/#/login'
+					});
+				}
+			});
+		} else {
+			// 出错1分钟重试一次
+			setTimeout(function () {
+				init();
+			}, 60000);
+		}
 	})
 }
 
