@@ -6,15 +6,15 @@
     chrome.tabs.getSelected(null, function(tab) {
       var bg = chrome.extension.getBackgroundPage();
       // console.log(tab);
-      console.log('xxxxxxxxxxxxxxxxxxxxx', tab, bg);
       var tags = [];
       var selectedTag = null;
-      var userId = null;
       var login = false;
-      var firstSelectTag = true;
+      var originUrl = tab.url;
+      var originTitle = tab.title || '';
+      var title = originTitle.split('-')[0].trim();
 
-      $('#js-url').val(tab.url);
-      $('#js-title').val(tab.title);
+      $('#js-url').val(originUrl);
+      $('#js-title').val(title);
       $('.ui.inverted.dimmer').addClass('active');
 
       let url = server + 'api/tags/';
@@ -69,6 +69,10 @@
           });
         }
       );
+
+      $('#js-restore-title').click(() => {
+        $('#js-title').val(originTitle);
+      });
 
       $('.js-cancel').click(() => {
         window.close();

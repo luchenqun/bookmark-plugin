@@ -34,7 +34,7 @@
             <input id="js-url" type="text" placeholder="输粘贴网页地址，如：https://mybookmark.cn/" />
           </div>
           <div class="required eight wide field">
-            <label>书签标题</label>
+            <label id="js-restore-title">书签标题</label>
             <div class="ui icon input">
               <input id="js-title" type="text" />
             </div>
@@ -57,7 +57,7 @@
       </div>
       <div class="field">
         <label>描述/备忘</label>
-        <textarea rows="5" id="js-desc" placeholder="如果添加书签，可以是网站的说明，也可以备忘一下账号或者摘抄内容，就算公开你的链接，这个也只有自己能在详情里面看到。&#13;&#10;&#13;&#10;如果添加备忘，请选择一个分类再输入备忘内容，然后点击 添加备忘 按钮！"></textarea>
+        <textarea rows="5" id="js-desc" placeholder="如果添加书签，可以是网站的说明，也可以备忘一下账号或者摘抄内容，就算公开你的链接，这个也只有自己能在详情里面看到。&#13;&#10;书签标题已过滤无用信息，若您觉得过滤的标题有误，点击输入框上面的 书签标题* 即可还原。&#13;&#10;如果添加备忘，请选择一个分类再输入备忘内容，然后点击 添加备忘 按钮！"></textarea>
       </div>
       <div class="field">
         <div class="ui checkbox js-public checked">
