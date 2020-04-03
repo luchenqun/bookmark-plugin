@@ -1,14 +1,12 @@
 (function (window) {
   var server = 'https://mybookmark.cn/';
   chrome.storage.sync.get({ bookmarkServer: 'https://mybookmark.cn/' }, function (items) {
-    server = items.bookmarkServer;
+    server = 'http://127.0.0.1:8360/' || items.bookmarkServer;
     $('.js-popup-server').text(server);
     chrome.tabs.getSelected(null, function (tab) {
       var bg = chrome.extension.getBackgroundPage();
-      // console.log(tab);
       var tags = [];
       var selectedTag = null;
-      var login = false;
       var originUrl = tab.url;
       var originTitle = tab.title || '';
       var title = originTitle.split('-')[0].trim();
@@ -17,58 +15,72 @@
       $('#js-title').val(title);
       $('.ui.inverted.dimmer').addClass('active');
 
-      let url = server + 'api/tags/';
+      function getTags() {
+        bg.jqAjax(server + 'api/tags/', 'GET', {}, function (reply, textStatus, jqXHR) {
+          // console.log('get tags', reply, textStatus, jqXHR);
+          if (reply.code == 401) {
+            $(".js-add-bookmark").hide();
+            $(".js-login").show();
+            $("html").css("height", "250px");
 
-      bg.jqAjax(
-        url,
-        'GET',
-        {},
-        function (_tags, textStatus, jqXHR) {
-          login = true;
-          tags = _tags;
-          tags.sort((a, b) => {
-            return a.last_use > b.last_use ? -1 : 1;
-          });
-          for (let tag of tags) {
-            $('#js-add-tag').before(`<div class="ui label js-tag" id="${tag.id}" style="margin:3px 10px 8px 0px;cursor:default;">${tag.name}</div>`);
-          }
-        },
-        function (xhr, textStatus) {
-          if (xhr.status === 401) {
-            toastr.error('您必须先登陆！3秒后自动跳转到登陆页面。', '错误');
-            setTimeout(() => {
-              chrome.tabs.create({
-                url: server + '#/login',
-              });
-            }, 3000);
-            login = false;
-          }
-        },
-        null,
-        function () {
-          $('.ui.inverted.dimmer').removeClass('active');
-          if (tags.length > 0) {
-            $('#' + tags[0].id).addClass('green');
-            selectedTag = tags[0].id;
-          }
+            $('.js-send-login').click(function () {
+              let params = {
+                username: $('#js-username').val(),
+                password: $('#js-password').val()
+              };
+              bg.jqAjax(server + "api/userLogin/", 'POST', JSON.stringify(params), function (reply) {
+                console.log('userLogin reply = ', reply)
+                if (reply.code == 0) {
+                  $(".js-add-bookmark").show();
+                  $(".js-login").hide();
+                  chrome.storage.sync.set({ Authorization: reply.data.token });
+                  getTags();
+                } else {
+                  toastr.error('登录失败，请重试。', '错误');
+                }
+              })
+            });
+          } else {
+            $(".js-add-bookmark").show();
+            $(".js-login").hide();
+            $("html").css("width", "750px");
+            $("html").css("height", "450px");
 
-          $('#js-add-tag').click(function () {
-            toastr.info('请到网站分类页面添加分类，3秒后自动打开新的网页。', '提示');
-            setTimeout(() => {
-              chrome.tabs.create({
-                url: server + '#/tags',
-              });
-              window.close();
-            }, 3000);
-          });
+            tags = reply.data;
+            console.log("tags", reply);
 
-          $('.js-tag').click(function () {
-            $('.js-tag.green').removeClass('green');
-            selectedTag = $(this).attr('id');
-            $('#' + selectedTag).addClass('green');
-          });
-        }
-      );
+            tags.sort((a, b) => a.lastUse > b.lastUse ? -1 : 1);
+
+            for (let tag of tags) {
+              $('#js-add-tag').before(`<div class="ui label js-tag" id="${tag.id}" style="margin:3px 10px 8px 0px;cursor:default;">${tag.name}</div>`);
+            }
+
+            $('.ui.inverted.dimmer').removeClass('active');
+            if (tags.length > 0) {
+              $('#' + tags[0].id).addClass('green');
+              selectedTag = tags[0].id;
+            }
+
+            $('#js-add-tag').click(function () {
+              toastr.info('请到网站分类页面添加分类，3秒后自动打开新的网页。', '提示');
+              setTimeout(() => {
+                chrome.tabs.create({
+                  url: server + '#/tags',
+                });
+                window.close();
+              }, 3000);
+            });
+
+            $('.js-tag').click(function () {
+              $('.js-tag.green').removeClass('green');
+              selectedTag = $(this).attr('id');
+              $('#' + selectedTag).addClass('green');
+            });
+          }
+        });
+      }
+
+      getTags();
 
       $('#js-restore-title').click(() => {
         $('#js-title').val(originTitle);
@@ -79,15 +91,6 @@
       });
 
       $('.js-send-bookmark').click(() => {
-        if (!login) {
-          toastr.error('您必须先登陆！3秒后自动跳转到登陆页面。', '错误');
-          setTimeout(() => {
-            chrome.tabs.create({
-              url: server + '#/login',
-            });
-          }, 3000);
-        }
-
         var url = server + 'api/addBookmark/';
         var params = {
           id: '',
@@ -114,9 +117,7 @@
         bg.jqAjax(
           url,
           'POST',
-          JSON.stringify({
-            params: params,
-          }),
+          JSON.stringify(params),
           function (data, textStatus, jqXHR) {
             if (data.title) {
               var msg = '[ ' + data.title + ' ] 添加成功！\n' + (data.update ? '系统检测到该书签之前添加过，只更新链接，描述，标题，分类。创建日期与最后点击日期不更新！' : '') + '\n窗口 3 秒后自动关闭。';
@@ -134,15 +135,6 @@
       });
 
       $('.js-send-note').click(() => {
-        if (!login) {
-          toastr.error('您必须先登陆！3秒后自动跳转到登陆页面。', '错误');
-          setTimeout(() => {
-            chrome.tabs.create({
-              url: server + '#/login',
-            });
-          }, 3000);
-        }
-
         if (!selectedTag) {
           toastr.error('您必须选择一个分类！', '错误');
           return;
