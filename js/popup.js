@@ -1,9 +1,9 @@
-(function(window) {
+(function (window) {
   var server = 'https://mybookmark.cn/';
-  chrome.storage.sync.get({ bookmarkServer: 'https://mybookmark.cn/' }, function(items) {
+  chrome.storage.sync.get({ bookmarkServer: 'https://mybookmark.cn/' }, function (items) {
     server = items.bookmarkServer;
     $('.js-popup-server').text(server);
-    chrome.tabs.getSelected(null, function(tab) {
+    chrome.tabs.getSelected(null, function (tab) {
       var bg = chrome.extension.getBackgroundPage();
       // console.log(tab);
       var tags = [];
@@ -23,7 +23,7 @@
         url,
         'GET',
         {},
-        function(_tags, textStatus, jqXHR) {
+        function (_tags, textStatus, jqXHR) {
           login = true;
           tags = _tags;
           tags.sort((a, b) => {
@@ -33,7 +33,7 @@
             $('#js-add-tag').before(`<div class="ui label js-tag" id="${tag.id}" style="margin:3px 10px 8px 0px;cursor:default;">${tag.name}</div>`);
           }
         },
-        function(xhr, textStatus) {
+        function (xhr, textStatus) {
           if (xhr.status === 401) {
             toastr.error('您必须先登陆！3秒后自动跳转到登陆页面。', '错误');
             setTimeout(() => {
@@ -45,14 +45,14 @@
           }
         },
         null,
-        function() {
+        function () {
           $('.ui.inverted.dimmer').removeClass('active');
           if (tags.length > 0) {
             $('#' + tags[0].id).addClass('green');
             selectedTag = tags[0].id;
           }
 
-          $('#js-add-tag').click(function() {
+          $('#js-add-tag').click(function () {
             toastr.info('请到网站分类页面添加分类，3秒后自动打开新的网页。', '提示');
             setTimeout(() => {
               chrome.tabs.create({
@@ -62,7 +62,7 @@
             }, 3000);
           });
 
-          $('.js-tag').click(function() {
+          $('.js-tag').click(function () {
             $('.js-tag.green').removeClass('green');
             selectedTag = $(this).attr('id');
             $('#' + selectedTag).addClass('green');
@@ -117,7 +117,7 @@
           JSON.stringify({
             params: params,
           }),
-          function(data, textStatus, jqXHR) {
+          function (data, textStatus, jqXHR) {
             if (data.title) {
               var msg = '[ ' + data.title + ' ] 添加成功！\n' + (data.update ? '系统检测到该书签之前添加过，只更新链接，描述，标题，分类。创建日期与最后点击日期不更新！' : '') + '\n窗口 3 秒后自动关闭。';
               bg.showMsg(msg, '书签添加成功', 3000);
@@ -126,7 +126,7 @@
               toastr.error('[ ' + params.title + ' ] 添加失败', '提示');
             }
           },
-          function(xhr, textStatus) {
+          function (xhr, textStatus) {
             toastr.error('[ ' + params.title + ' ] 添加失败', '提示');
           }
         );
@@ -172,7 +172,7 @@
           JSON.stringify({
             params: params,
           }),
-          function(data, textStatus, jqXHR) {
+          function (data, textStatus, jqXHR) {
             var brief = params.content.length > 60 ? params.content.substring(0, 60) + ' ......' : params.content;
             if (data.retCode === 0) {
               var msg = '备忘 [ ' + brief + ' ] 添加成功！\n';
@@ -182,7 +182,7 @@
               toastr.error('备忘 [ ' + brief + ' ] 添加失败', '提示');
             }
           },
-          function(xhr, textStatus) {
+          function (xhr, textStatus) {
             toastr.error('备忘 [ ' + brief + ' ] 添加失败', '提示');
           }
         );
