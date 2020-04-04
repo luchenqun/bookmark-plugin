@@ -1,12 +1,15 @@
 console.log('bookmark init background');
+// chrome.storage.sync.set({ Authorization: "" });
 var server = 'https://mybookmark.cn/';
 var Authorization = "";
-chrome.storage.sync.get({ bookmarkServer: 'https://mybookmark.cn/' }, function (items) {
-  server = 'http://127.0.0.1:8360/' || items.bookmarkServer;
-});
-chrome.storage.sync.get({ Authorization: '' }, function (items) {
-  Authorization = items.Authorization;
-});
+function reloadStorage(callBack) {
+  chrome.storage.sync.get({ bookmarkServer: 'https://mybookmark.cn/', Authorization: '' }, function (items) {
+    console.log('reloadStorage ', items);
+    server = items.bookmarkServer;
+    Authorization = items.Authorization;
+    callBack && callBack();
+  });
+}
 
 // 预留一个方法给popup调用
 function showMsg(body, title, time) {
@@ -57,19 +60,15 @@ function addBookmark(info, tab, tagId) {
     title: tab.title,
     tagId
   };
-  jqAjax(url, 'POST', JSON.stringify(params), function (data, textStatus, jqXHR) {
-    if (data.title) {
-      var msg = '[ ' + data.title + ' ] 添加成功！\n' + (data.update ? '系统检测到该书签之前添加过，只更新链接，描述，标题，分类。创建日期与最后点击日期不更新！' : '') + '\n窗口 3 秒后自动关闭。';
+  jqAjax(url, 'POST', JSON.stringify(params), function (reply) {
+    if (reply.code == 0) {
+      var msg = '[ ' + params.title + ' ] 添加成功！' + '\n窗口 3 秒后自动关闭。';
       showMsg(msg, '书签添加成功', 3000);
       init();
     } else {
       showMsg('[ ' + params.title + ' ] 添加失败', '书签添加失败', 3000);
     }
-  },
-    function (xhr, textStatus) {
-      showMsg('[ ' + params.title + ' ] 添加失败', '书签添加失败', 3000);
-    }
-  );
+  });
 }
 
 function addNote(info, tab, tagId) {
@@ -83,32 +82,26 @@ function addNote(info, tab, tagId) {
     params.content = params.content.replace(/\n\n\n/g, '\n\n');
   }
 
-  jqAjax(url, 'POST', JSON.stringify(params), function (data, textStatus, jqXHR) {
+  jqAjax(url, 'POST', JSON.stringify(params), function (reply) {
     var brief = params.content.length > 60 ? params.content.substring(0, 60) + ' ......' : params.content;
-    if (data.retCode === 0) {
+    if (reply.code == 0) {
       var msg = '备忘 [ ' + brief + ' ] 添加成功！\n';
       showMsg(msg, '备忘录添加成功', 3000);
     } else {
       showMsg('备忘 [ ' + brief + ' ] 添加失败', '备忘录添加失败！', 6000);
     }
-  },
-    function (xhr, textStatus) {
-      showMsg('备忘 [ ' + brief + ' ] 添加失败', '备忘录添加失败！', 6000);
-    }
-  );
+  });
 }
 
 function init() {
   console.log('bookmark init contextMenus');
-  jqAjax(server + 'api/tags/', 'GET', {}, function (reply, textStatus, jqXHR) {
-    if (reply.code == 401) {
+  jqAjax(server + 'api/tags/', 'GET', {}, function (reply) {
+    if (reply.code != 0) {
       return;
     }
     let tags = reply.data;
     chrome.contextMenus.removeAll();
-    tags.sort((a, b) => {
-      return a.last_use > b.last_use ? -1 : 1;
-    });
+    tags.sort((a, b) => a.lastUse > b.lastUse ? -1 : 1);
 
     const contextPageAddUrl = 'page';
     const contextSelectionAddNote = 'selection';
@@ -148,18 +141,13 @@ function init() {
         contexts: [contextSelectionAddNote],
         parentId: parentIdSelectionAddNote,
         onclick: function (info, tab) {
-          chrome.tabs.executeScript(
-            {
-              code: 'window.getSelection().toString();',
-            },
-            function (selection) {
-              info.selectionText = selection[0];
-              var regex = /(?:[\u2700-\u27bf]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff]|[\u0023-\u0039]\ufe0f?\u20e3|\u3299|\u3297|\u303d|\u3030|\u24c2|\ud83c[\udd70-\udd71]|\ud83c[\udd7e-\udd7f]|\ud83c\udd8e|\ud83c[\udd91-\udd9a]|\ud83c[\udde6-\uddff]|\ud83c[\ude01-\ude02]|\ud83c\ude1a|\ud83c\ude2f|\ud83c[\ude32-\ude3a]|\ud83c[\ude50-\ude51]|\u203c|\u2049|[\u25aa-\u25ab]|\u25b6|\u25c0|[\u25fb-\u25fe]|\u00a9|\u00ae|\u2122|\u2139|\ud83c\udc04|[\u2600-\u26FF]|\u2b05|\u2b06|\u2b07|\u2b1b|\u2b1c|\u2b50|\u2b55|\u231a|\u231b|\u2328|\u23cf|[\u23e9-\u23f3]|[\u23f8-\u23fa]|\ud83c\udccf|\u2934|\u2935|[\u2190-\u21ff])/g;
-              // 清掉emoji
-              info.selectionText = info.selectionText.replace(regex, '');
-              addNote(info, tab, tag.id);
-            }
-          );
+          chrome.tabs.executeScript({ code: 'window.getSelection().toString();' }, function (selection) {
+            info.selectionText = selection[0];
+            var regex = /(?:[\u2700-\u27bf]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff]|[\u0023-\u0039]\ufe0f?\u20e3|\u3299|\u3297|\u303d|\u3030|\u24c2|\ud83c[\udd70-\udd71]|\ud83c[\udd7e-\udd7f]|\ud83c\udd8e|\ud83c[\udd91-\udd9a]|\ud83c[\udde6-\uddff]|\ud83c[\ude01-\ude02]|\ud83c\ude1a|\ud83c\ude2f|\ud83c[\ude32-\ude3a]|\ud83c[\ude50-\ude51]|\u203c|\u2049|[\u25aa-\u25ab]|\u25b6|\u25c0|[\u25fb-\u25fe]|\u00a9|\u00ae|\u2122|\u2139|\ud83c\udc04|[\u2600-\u26FF]|\u2b05|\u2b06|\u2b07|\u2b1b|\u2b1c|\u2b50|\u2b55|\u231a|\u231b|\u2328|\u23cf|[\u23e9-\u23f3]|[\u23f8-\u23fa]|\ud83c\udccf|\u2934|\u2935|[\u2190-\u21ff])/g;
+            // 清掉emoji
+            info.selectionText = info.selectionText.replace(regex, '');
+            addNote(info, tab, tag.id);
+          });
         },
       });
     }
@@ -167,5 +155,5 @@ function init() {
 }
 
 setTimeout(() => {
-  init();
+  reloadStorage(init);
 }, 100);
