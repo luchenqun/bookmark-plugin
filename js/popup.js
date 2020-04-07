@@ -13,11 +13,13 @@
 
       $('#js-url').val(originUrl);
       $('#js-title').val(title);
-      $('.ui.inverted.dimmer').addClass('active');
+      $('.js-tags-loading').addClass('active');
 
       function getTags() {
         bg.jqAjax(server + 'api/tags/', 'GET', {}, function (reply) {
           // console.log('get tags', reply);
+          $('.js-tags-loading').removeClass('active');
+
           if (reply.code == 0) {
             $(".js-add-bookmark").show();
             $(".js-login").hide();
@@ -31,7 +33,6 @@
             $("html").css("width", "750px");
             $("html").css("height", $(".js-add-bookmark").height() + 25);
 
-            $('.ui.inverted.dimmer').removeClass('active');
             if (tags.length > 0) {
               $('#' + tags[0].id).addClass('green');
               tagId = tags[0].id;
@@ -56,15 +57,18 @@
             $(".js-add-bookmark").hide();
             $(".js-login").show();
             $("html").css("width", "350px");
-            $("html").css("height", "280px");
+            $("html").css("height", "260px");
 
             $('.js-send-login').click(function () {
               let params = {
                 username: $('#js-username').val(),
                 password: $('#js-password').val()
               };
+
+              $('.js-login-loading').addClass('active');
               bg.jqAjax(server + "api/userLogin/", 'POST', JSON.stringify(params), function (reply) {
-                console.log('userLogin reply = ', reply)
+                console.log('userLogin reply = ', reply);
+                $('.js-login-loading').removeClass('active');
                 if (reply.code == 0) {
                   $(".js-add-bookmark").show();
                   $(".js-login").hide();

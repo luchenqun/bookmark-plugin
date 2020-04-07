@@ -18,7 +18,12 @@
   </head>
 
   <body>
-    <form class="ui form js-add-bookmark">
+    <div>
+      <div class="ui inverted dimmer js-tags-loading">
+        <div class="ui text loader">正在获取分类...</div>
+      </div>
+    </div>
+    <form class="ui form js-add-bookmark" style="display: none;">
       <h3 class="ui header"><span class="js-popup-server"></span> - 添加书签</h3>
       <div class="ui divider" style="margin-top: 20px; margin-bottom: 20px;"></div>
       <div class="ui leftaligned grid">
@@ -49,9 +54,6 @@
             <i class="info circle icon"></i>
           </span>
         </label>
-        <div class="ui inverted dimmer">
-          <div class="ui text loader">正在获取分类...</div>
-        </div>
         <div class="ui label" id="js-add-tag" style="margin: 3px 10px 8px 0px; cursor: default;" title="添加新分类">
           <i style="margin-left: 10px;" class="plus icon"></i>
         </div>
@@ -71,7 +73,10 @@
         </div>
       </div>
     </form>
-    <form class="ui form js-login">
+    <form class="ui form js-login" style="display: none;">
+      <div class="ui inverted dimmer js-login-loading">
+        <div class="ui text loader">登录中...</div>
+      </div>
       <h3 class="ui header"><span class="js-popup-server"></span> - 登录账号</h3>
       <div class="ui divider" style="margin-top: 20px; margin-bottom: 20px;"></div>
       <div class="required field">
