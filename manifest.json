@@ -29,7 +29,7 @@
       "run_at": "document_start"
     }
   ],
-  "permissions": ["tabs", "notifications", "webRequest", "storage"],
+  "permissions": ["contextMenus", "activeTab", "notifications", "webRequest", "storage"],
   "web_accessible_resources": ["js/inject.js"],
   "homepage_url": "https://mybookmark.cn/",
   "omnibox": {
