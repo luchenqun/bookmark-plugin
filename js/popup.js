@@ -113,9 +113,10 @@
         } else {
           bg.jqAjax(url, 'POST', JSON.stringify(params), function (reply) {
             if (reply.code == 0) {
-              var msg = '[ ' + params.title + ' ] 添加成功！' + '\n窗口 3 秒后自动关闭。';
-              bg.showMsg(msg, '书签添加成功', 3000);
-              window.close();
+              // var msg = '[ ' + params.title + ' ] 添加成功！' + '\n窗口 1 秒后自动关闭。';
+              // toastr.success(msg, '提示');
+              $('body').dimmer('show');
+              setTimeout(() => { window.close(); }, 1000);
             } else {
               if (reply.code == 401) {
                 $(".js-add-bookmark").hide();

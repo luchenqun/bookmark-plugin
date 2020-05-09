@@ -8,8 +8,8 @@
       var server = $('.js-options-server').val();
       server = server.trim();
       chrome.storage.sync.set({ bookmarkServer: server }, function () {
-        var bg = chrome.extension.getBackgroundPage();
-        bg.showMsg(server + ' 已设置为您的默认服务器，请点右上角×关闭页面', '设置成功', 3000);
+        toastr.options.positionClass = "toast-top-full-width";
+        toastr.info(server + ' 已设置为您的默认服务器，请点右上角×关闭页面');
         $('.js-options-server').val(server);
       });
     });

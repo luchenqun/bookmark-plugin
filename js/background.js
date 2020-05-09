@@ -11,23 +11,6 @@ function reloadStorage(callBack) {
   });
 }
 
-// 预留一个方法给popup调用
-function showMsg(body, title, time) {
-  var note = new Notification(title || '通知', {
-    dir: 'auto',
-    tag: 'bookmark',
-    body: body,
-    icon: 'img/note.png',
-    renotify: true,
-  });
-
-  if (time) {
-    setTimeout(() => {
-      note.close();
-    }, time);
-  }
-}
-
 function jqAjax(url, type, data, successCallback, errorCallback, beforeSendCallback, completeCallback) {
   $.ajax({
     url: url,
@@ -61,13 +44,8 @@ function addBookmark(info, tab, tagId) {
     tagId
   };
   jqAjax(url, 'POST', JSON.stringify(params), function (reply) {
-    if (reply.code == 0) {
-      var msg = '[ ' + params.title + ' ] 添加成功！' + '\n窗口 3 秒后自动关闭。';
-      showMsg(msg, '书签添加成功', 3000);
-      init();
-    } else {
-      showMsg('[ ' + params.title + ' ] 添加失败', '书签添加失败', 3000);
-    }
+    alert('书签 "' + params.title + '" 添加' + (reply.code == 0 ? '成功' : '失败'));
+    init();
   });
 }
 
@@ -83,13 +61,11 @@ function addNote(info, tab, tagId) {
   }
 
   jqAjax(url, 'POST', JSON.stringify(params), function (reply) {
-    var brief = params.content.length > 60 ? params.content.substring(0, 60) + ' ......' : params.content;
-    if (reply.code == 0) {
-      var msg = '备忘 [ ' + brief + ' ] 添加成功！\n';
-      showMsg(msg, '备忘录添加成功', 3000);
-    } else {
-      showMsg('备忘 [ ' + brief + ' ] 添加失败', '备忘录添加失败！', 6000);
+    var brief = params.content.length > 20 ? params.content.substring(0, 20) + ' ......' : params.content;
+    while (brief.indexOf("\n") > 0) {
+      brief = brief.replace(/\n/g, "");
     }
+    alert('备忘 "' + brief + '" 添加' + (reply.code == 0 ? '成功' : '失败'));
   });
 }
 
