@@ -1,6 +1,6 @@
 (function (window) {
-  var server = 'https://mybookmark.cn/';
-  chrome.storage.sync.get({ bookmarkServer: 'https://mybookmark.cn/' }, function (items) {
+  var server = 'https://b.lucq.fun/';
+  chrome.storage.sync.get({ bookmarkServer: 'https://b.lucq.fun/' }, function (items) {
     server = items.bookmarkServer;
     $('.js-popup-server').text(server);
     chrome.tabs.getSelected(null, function (tab) {

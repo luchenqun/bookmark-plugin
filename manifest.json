@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "书签快速添加",
-  "version": "2.0.2",
-  "description": "快速将书签添加到系统 https://mybookmark.cn/ 中",
+  "version": "2.0.3",
+  "description": "快速将书签添加到系统 https://b.lucq.fun/ 中",
   "icons": {
     "16": "img/icon.png",
     "48": "img/icon.png",
@@ -31,7 +31,7 @@
   ],
   "permissions": ["contextMenus", "activeTab", "storage"],
   "web_accessible_resources": ["js/inject.js"],
-  "homepage_url": "https://mybookmark.cn/",
+  "homepage_url": "https://b.lucq.fun/",
   "omnibox": {
     "keyword": "bookmark"
   }
