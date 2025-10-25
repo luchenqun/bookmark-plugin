@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "书签快速添加",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "description": "快速将书签添加到系统 https://b.lucq.fun/ 中",
   "icons": {
     "16": "img/icon.png",
