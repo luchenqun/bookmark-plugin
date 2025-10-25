@@ -1,10 +1,40 @@
 (function (window) {
   var server = 'https://b.lucq.fun/';
-  chrome.storage.sync.get({ bookmarkServer: 'https://b.lucq.fun/' }, function (items) {
+  var Authorization = '';
+
+  function fetchAjax(url, type, data, successCallback, errorCallback) {
+    const options = {
+      method: type,
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': Authorization
+      }
+    };
+
+    if (data && (type === 'POST' || type === 'PUT')) {
+      options.body = data;
+    }
+
+    fetch(url, options)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        successCallback && successCallback(data);
+      })
+      .catch(error => {
+        errorCallback && errorCallback(error);
+      });
+  }
+  chrome.storage.sync.get({ bookmarkServer: 'https://b.lucq.fun/', Authorization: '' }, function (items) {
     server = items.bookmarkServer;
+    Authorization = items.Authorization;
     $('.js-popup-server').text(server);
-    chrome.tabs.getSelected(null, function (tab) {
-      var bg = chrome.extension.getBackgroundPage();
+    chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+      var tab = tabs[0];
       var tags = [];
       var tagId = null;
       var originUrl = tab.url;
@@ -16,7 +46,7 @@
       $('.js-tags-loading').addClass('active');
 
       function getTags() {
-        bg.jqAjax(server + 'api/tags/', 'GET', {}, function (reply) {
+        fetchAjax(server + 'api/tags/', 'GET', {}, function (reply) {
           // console.log('get tags', reply);
           $('.js-tags-loading').removeClass('active');
 
@@ -66,14 +96,15 @@
               };
 
               $('.js-login-loading').addClass('active');
-              bg.jqAjax(server + "api/userLogin/", 'POST', JSON.stringify(params), function (reply) {
+              fetchAjax(server + "api/userLogin/", 'POST', JSON.stringify(params), function (reply) {
                 console.log('userLogin reply = ', reply);
                 $('.js-login-loading').removeClass('active');
                 if (reply.code == 0) {
                   $(".js-add-bookmark").show();
                   $(".js-login").hide();
                   chrome.storage.sync.set({ Authorization: reply.data.token }, function () {
-                    bg.reloadStorage(getTags);
+                    Authorization = reply.data.token;
+                    getTags();
                   });
                 } else {
                   toastr.error('登录失败，请重试。', '错误');
@@ -111,7 +142,7 @@
         } else if (!params.title) {
           toastr.error('书签标题不能为空！', '错误');
         } else {
-          bg.jqAjax(url, 'POST', JSON.stringify(params), function (reply) {
+          fetchAjax(url, 'POST', JSON.stringify(params), function (reply) {
             if (reply.code == 0) {
               // var msg = '[ ' + params.title + ' ] 添加成功！' + '\n窗口 1 秒后自动关闭。';
               // toastr.success(msg, '提示');
@@ -128,7 +159,6 @@
             }
           });
         }
-        bg.init();
       });
     });
   });

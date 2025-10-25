@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "书签快速添加",
   "version": "2.0.3",
   "description": "快速将书签添加到系统 https://b.lucq.fun/ 中",
@@ -9,14 +9,13 @@
     "128": "img/icon.png"
   },
   "background": {
-    "page": "background.html"
+    "service_worker": "js/background.js"
   },
   "options_page": "options.html",
   "options_ui": {
-    "page": "options.html",
-    "chrome_style": true
+    "page": "options.html"
   },
-  "browser_action": {
+  "action": {
     "default_icon": "img/icon.png",
     "default_title": "点击将当前页快速添加书签列表",
     "default_popup": "popup.html"
@@ -29,8 +28,13 @@
       "run_at": "document_start"
     }
   ],
-  "permissions": ["contextMenus", "activeTab", "storage"],
-  "web_accessible_resources": ["js/inject.js"],
+  "permissions": ["contextMenus", "activeTab", "storage", "scripting"],
+  "web_accessible_resources": [
+    {
+      "resources": ["js/inject.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "homepage_url": "https://b.lucq.fun/",
   "omnibox": {
     "keyword": "bookmark"
